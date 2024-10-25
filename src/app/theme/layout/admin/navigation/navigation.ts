@@ -86,42 +86,44 @@ const NavigationItems = [
         type: 'item',
         classes: 'nav-item',
         url: '#',
-        icon: 'ti ti-file'
+        icon: 'ti ti-paper-bag'
       },
       {
-        id: 'tabler',
+        id: 'color',
         title: 'Customer',
         type: 'item',
         classes: 'nav-item',
         url: '#',
         icon: 'ti ti-user',
         target: true,
-        external: true
-      },  {
-        id: 'tabler',
+        external: true,
+      },
+      {
+        id: 'color',
         title: 'Analytics',
         type: 'item',
         classes: 'nav-item',
         url: '#',
-        icon: 'ti ti-analytics',
+        icon: 'ti ti-graph',
         target: true,
         external: true
-      },{
-        id: 'tabler',
+      }, 
+      {
+        id: 'color',
         title: 'Reviews',
         type: 'item',
         classes: 'nav-item',
         url: '#',
-        icon: 'ti ti-analytics',
+        icon: 'ti ti-stars',
         target: true,
         external: true
-      },{
+      }, {
         id: 'tabler',
         title: 'Foods',
         type: 'item',
         classes: 'nav-item',
         url: '#',
-        icon: 'ti ti-analytics',
+        icon: 'ti ti-shovel-pitchforks',
         target: true,
         external: true
       },
@@ -131,25 +133,25 @@ const NavigationItems = [
         type: 'item',
         classes: 'nav-item',
         url: '#',
-        icon: 'ti ti-analytics',
+        icon: 'ti ti-graph',
         target: true,
         external: true
-      },{
+      }, {
         id: 'tabler',
         title: 'Customer Detail',
         type: 'item',
         classes: 'nav-item',
         url: '#',
-        icon: 'ti ti-analytics',
+        icon: 'ti ti-graph',
         target: true,
         external: true
-      },{
+      }, {
         id: 'tabler',
         title: 'Calendar',
         type: 'item',
         classes: 'nav-item',
         url: '#',
-        icon: 'ti ti-analytics',
+        icon: 'ti ti-calendar-month',
         target: true,
         external: true
       },
@@ -159,7 +161,7 @@ const NavigationItems = [
         type: 'item',
         classes: 'nav-item',
         url: '#',
-        icon: 'ti ti-analytics',
+        icon: 'ti ti-message-dots',
         target: true,
         external: true
       },
@@ -169,38 +171,38 @@ const NavigationItems = [
         type: 'item',
         classes: 'nav-item',
         url: '#',
-        icon: 'ti ti-Wallet',
+        icon: 'ti ti-wallet',
         target: true,
         external: true
       }
     ]
   },
-  {
-    id: 'other',
-    title: 'Other',
-    type: 'group',
-    icon: 'icon-navigation',
-    children: [
-      {
-        id: 'sample-page',
-        title: 'Sample Page',
-        type: 'item',
-        url: '/sample-page',
-        classes: 'nav-item',
-        icon: 'ti ti-brand-chrome'
-      },
-      {
-        id: 'document',
-        title: 'Document',
-        type: 'item',
-        classes: 'nav-item',
-        url: 'https://codedthemes.gitbook.io/berry-angular/',
-        icon: 'ti ti-vocabulary',
-        target: true,
-        external: true
-      }
-    ]
-  }
+  // {
+  //   id: 'other',
+  //   title: 'Other',
+  //   type: 'group',
+  //   icon: 'icon-navigation',
+  //   children: [
+  //     {
+  //       id: 'sample-page',
+  //       title: 'Sample Page',
+  //       type: 'item',
+  //       url: '/sample-page',
+  //       classes: 'nav-item',
+  //       icon: 'ti ti-brand-chrome'
+  //     },
+  //     {
+  //       id: 'document',
+  //       title: 'Document',
+  //       type: 'item',
+  //       classes: 'nav-item',
+  //       url: 'https://codedthemes.gitbook.io/berry-angular/',
+  //       icon: 'ti ti-vocabulary',
+  //       target: true,
+  //       external: true
+  //     }
+  //   ]
+  // }
 ];
 
 @Injectable()
