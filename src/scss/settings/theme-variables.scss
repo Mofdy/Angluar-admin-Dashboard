@@ -7,15 +7,15 @@ $sidebar-width: 260px;
 $sidebar-collapsed-width: 80px;
 
 // header
-$header-background: #fff;
+$header-background: rgb(28 28 27);
 $header-color: #525b69;
 $header-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-$brand-color: #161c25;
+$brand-color: rgb(255 95 0);
 
 // Menu
-$sidebar-background: #fff;
+$sidebar-background: rgb(28 28 27);
 $sidebar-color: #616161;
-$sidebar-active-color: $secondary;
+$sidebar-active-color:rgba(255,95,0,.9);
 $sidebar-caption: #212121;
 $sidebar-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
 

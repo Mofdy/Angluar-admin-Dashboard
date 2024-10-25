@@ -13,6 +13,10 @@ $preset-colors: (
 );
 $dark-preset-colors: (
   preset-1: (
-    body: #111
+    body: #111,
+    primary: rgb(255 95 0),
+    primary-dark:  rgb(1, 1, 1),
+    secondary: rgb(28 28 27),
+    secondary-dark: #555,
   )
 );
