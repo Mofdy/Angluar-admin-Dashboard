@@ -74,27 +74,102 @@ const NavigationItems = [
     children: [
       {
         id: 'typography',
-        title: 'Typography',
+        title: 'orderlist',
         type: 'item',
         classes: 'nav-item',
-        url: '/typography',
-        icon: 'ti ti-typography'
+        url: '#',
+        icon: 'ti ti-list'
       },
       {
         id: 'color',
-        title: 'Colors',
+        title: 'Order Detail',
         type: 'item',
         classes: 'nav-item',
-        url: '/color',
-        icon: 'ti ti-brush'
+        url: '#',
+        icon: 'ti ti-file'
       },
       {
         id: 'tabler',
-        title: 'Tabler',
+        title: 'Customer',
         type: 'item',
         classes: 'nav-item',
-        url: 'https://tabler-icons.io/',
-        icon: 'ti ti-plant-2',
+        url: '#',
+        icon: 'ti ti-user',
+        target: true,
+        external: true
+      },  {
+        id: 'tabler',
+        title: 'Analytics',
+        type: 'item',
+        classes: 'nav-item',
+        url: '#',
+        icon: 'ti ti-analytics',
+        target: true,
+        external: true
+      },{
+        id: 'tabler',
+        title: 'Reviews',
+        type: 'item',
+        classes: 'nav-item',
+        url: '#',
+        icon: 'ti ti-analytics',
+        target: true,
+        external: true
+      },{
+        id: 'tabler',
+        title: 'Foods',
+        type: 'item',
+        classes: 'nav-item',
+        url: '#',
+        icon: 'ti ti-analytics',
+        target: true,
+        external: true
+      },
+      {
+        id: 'tabler',
+        title: 'Food Detail',
+        type: 'item',
+        classes: 'nav-item',
+        url: '#',
+        icon: 'ti ti-analytics',
+        target: true,
+        external: true
+      },{
+        id: 'tabler',
+        title: 'Customer Detail',
+        type: 'item',
+        classes: 'nav-item',
+        url: '#',
+        icon: 'ti ti-analytics',
+        target: true,
+        external: true
+      },{
+        id: 'tabler',
+        title: 'Calendar',
+        type: 'item',
+        classes: 'nav-item',
+        url: '#',
+        icon: 'ti ti-analytics',
+        target: true,
+        external: true
+      },
+      {
+        id: 'tabler',
+        title: 'Chat',
+        type: 'item',
+        classes: 'nav-item',
+        url: '#',
+        icon: 'ti ti-analytics',
+        target: true,
+        external: true
+      },
+      {
+        id: 'tabler',
+        title: 'Wallet',
+        type: 'item',
+        classes: 'nav-item',
+        url: '#',
+        icon: 'ti ti-Wallet',
         target: true,
         external: true
       }
