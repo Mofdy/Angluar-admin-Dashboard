@@ -8,13 +8,13 @@ export const environment = {
   appVersion: packageInfo.version,
   production: false,
   firebase: {
-    apiKey: "AIzaSyA3NfFkmeBGYevCEeCs4wPc5OxMXYCmqAg",
-    authDomain: "buffalosite-5ebc1.firebaseapp.com",
-    databaseURL: "https://buffalosite-5ebc1-default-rtdb.firebaseio.com",
-    projectId: "buffalosite-5ebc1",
-    storageBucket: "buffalosite-5ebc1.firebasestorage.app",
-    messagingSenderId: "674161359640",
-    appId: "1:674161359640:web:a9170050e49d8fa8117c6d",
+      apiKey: "AIzaSyDF3h_8mHGGs4REC-nJ2Fgk3ofBu5E9cwI",
+      authDomain: "buffalo-burger-73090.firebaseapp.com",
+      projectId: "buffalo-burger-73090",
+      storageBucket: "buffalo-burger-73090.appspot.com",
+      messagingSenderId: "813583745340",
+      appId: "1:813583745340:web:1dcf4735da6b53193fde39",
+      measurementId: "G-NFHVQGTH7D"
   }
 };
 /*

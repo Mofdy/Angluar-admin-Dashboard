@@ -1,5 +1,5 @@
 // Angular Import
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // project import
@@ -7,8 +7,7 @@ import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { BajajChartComponent } from './bajaj-chart/bajaj-chart.component';
 import { ChartDataMonthComponent } from './chart-data-month/chart-data-month.component';
-// import { AngularFirestore, collection, collectionData } from '@angular/fire/firestore';
-
+import { DataService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-default',
@@ -17,8 +16,13 @@ import { ChartDataMonthComponent } from './chart-data-month/chart-data-month.com
   templateUrl: './default.component.html',
   styleUrls: ['./default.component.scss']
 })
-export class DefaultComponent {
-  constructor(){}
+export class DefaultComponent implements OnInit {
+
+  constructor(public dataService: DataService) {}
+
+  ngOnInit() {}
+
+
   // public method
   ListGroup = [
     {
@@ -81,6 +85,9 @@ export class DefaultComponent {
       color: 'text-warning'
     }
   ];
+  fetchItems() {
+    this.dataService.getItems().subscribe(items => {
+      console.log(items);
+    });
 
-
-}
+}}
