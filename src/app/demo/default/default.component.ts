@@ -7,6 +7,8 @@ import { SharedModule } from 'src/app/theme/shared/shared.module';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { BajajChartComponent } from './bajaj-chart/bajaj-chart.component';
 import { ChartDataMonthComponent } from './chart-data-month/chart-data-month.component';
+// import { AngularFirestore, collection, collectionData } from '@angular/fire/firestore';
+
 
 @Component({
   selector: 'app-default',
@@ -16,6 +18,7 @@ import { ChartDataMonthComponent } from './chart-data-month/chart-data-month.com
   styleUrls: ['./default.component.scss']
 })
 export class DefaultComponent {
+  constructor(){}
   // public method
   ListGroup = [
     {
@@ -78,4 +81,6 @@ export class DefaultComponent {
       color: 'text-warning'
     }
   ];
+
+
 }

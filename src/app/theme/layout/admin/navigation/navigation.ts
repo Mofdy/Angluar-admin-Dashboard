@@ -95,8 +95,6 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '#',
         icon: 'ti ti-user',
-        target: true,
-        external: true,
       },
       {
         id: 'color',
