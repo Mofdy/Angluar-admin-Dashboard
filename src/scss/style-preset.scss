@@ -49,7 +49,7 @@ File: style.css
             &:hover {
               > a {
                 &:before {
-                  background: $pc-secondary;
+                  background: $pc-primary;
                 }
               }
             }
@@ -115,7 +115,7 @@ File: style.css
     .nav-link {
       &:hover,
       &:focus {
-        color: $pc-primary;
+        color: $pc-secondary;
       }
     }
     .nav-pills .nav-link.active,
