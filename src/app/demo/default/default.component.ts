@@ -86,7 +86,7 @@ export class DefaultComponent implements OnInit {
     }
   ];
   fetchItems() {
-    this.dataService.getItems().subscribe(items => {
+    this.dataService.getItems("product").subscribe(items => {
       console.log(items);
     });
 
