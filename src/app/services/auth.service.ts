@@ -13,15 +13,15 @@ export class AuthService {
   // login method
   login(email : string, password : string) {
     this.fireauth.signInWithEmailAndPassword(email, password).then( res => {
-        localStorage.setItem('token','true');
+        
         
         console.log(res);
-        // this.router.navigate(['/default']);
         if(res.user?.emailVerified == true) {
+          localStorage.setItem('token','true');
+          console.log(res.user.emailVerified);
           this.router.navigate(['/default']);
         } 
         else {
-          console.log(res.user);
           this.router.navigate(['/guest/login']);
         }
 
@@ -66,7 +66,7 @@ export class AuthService {
   sendEmailForVarification(user : any) {
     console.log(user);
     user.sendEmailVerification().then((res : any) => {
-      this.router.navigate(['/varify-email']);
+      alert('Link has sent on your registered email. Please varify it.')
     }, (err : any) => {
       alert('Something went wrong. Not able to send mail to your email.')
     })
