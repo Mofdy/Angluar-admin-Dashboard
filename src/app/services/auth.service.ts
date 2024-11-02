@@ -16,7 +16,7 @@ export class AuthService {
         localStorage.setItem('token','true');
 
         if(res.user?.emailVerified == true) {
-          this.router.navigate(['default']);
+          this.router.navigate(['/default']);
         } 
         else {
           this.router.navigate(['/guest/login']);
@@ -73,7 +73,7 @@ export class AuthService {
   googleSignIn() {
     return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
 
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['default']);
       localStorage.setItem('token',JSON.stringify(res.user?.uid));
 
     }, err => {
