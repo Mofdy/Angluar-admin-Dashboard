@@ -1,0 +1,30 @@
+<div *ngFor="let food of foods">
+    <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
+    <p>{{ food.category }}</p>
+    <p>{{ food.description.en }} / {{ food.description.ar }}</p>
+    <img [src]="food.image" alt="{{ food.title.en }}">
+    <img [src]="food.imageWithCombo" alt="{{ food.title.en }} with combo">
+    <div *ngFor="let size of food.size">
+        <p>{{ size.title.en }} / {{ size.title.ar }} - {{ size.price | currency }}</p>
+    </div>
+    <button  (click)="editFood(food)">Edit</button>
+    <button (click)="deleteFood(food.id)">Delete</button>
+</div>
+
+<form *ngIf="selectedFood" (ngSubmit)="updateFood()">
+    <input [(ngModel)]="selectedFood.title.en" name="titleEn" placeholder="Title (English)" required>
+    <input [(ngModel)]="selectedFood.title.ar" name="titleAr" placeholder="Title (Arabic)" required>
+    <input [(ngModel)]="selectedFood.category" name="category" placeholder="Category" required>
+    <textarea [(ngModel)]="selectedFood.description.en" name="descriptionEn" placeholder="Description (English)"
+        required></textarea>
+    <textarea [(ngModel)]="selectedFood.description.ar" name="descriptionAr" placeholder="Description (Arabic)"
+        required></textarea>
+    <div *ngFor="let size of selectedFood.size; let i = index">
+        <input [(ngModel)]="size.title.en" name="sizeTitleEn{{i}}" placeholder="Size Title (English)" required>
+        <input [(ngModel)]="size.title.ar" name="sizeTitleAr{{i}}" placeholder="Size Title (Arabic)" required>
+        <input [(ngModel)]="size.price" name="sizePrice{{i}}" placeholder="Price" required type="number">
+    </div>
+    <input [(ngModel)]="selectedFood.image" name="image" placeholder="Image URL" required>
+    <input [(ngModel)]="selectedFood.imageWithCombo" name="imageWithCombo" placeholder="Image with Combo URL" required>
+    <button type="submit">Update</button>
+</form>
