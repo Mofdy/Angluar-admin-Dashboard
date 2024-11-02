@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, getAuth} from '@angular/fire/auth'
+import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider} from '@angular/fire/auth'
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -14,11 +14,14 @@ export class AuthService {
   login(email : string, password : string) {
     this.fireauth.signInWithEmailAndPassword(email, password).then( res => {
         localStorage.setItem('token','true');
-
+        
+        console.log(res);
+        // this.router.navigate(['/default']);
         if(res.user?.emailVerified == true) {
           this.router.navigate(['/default']);
         } 
         else {
+          console.log(res.user);
           this.router.navigate(['/guest/login']);
         }
 
