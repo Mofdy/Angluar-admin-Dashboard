@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // project import
 import { CardComponent } from './components/card/card.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
-import { FoodComponent } from './components/food/food.component';
 
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
@@ -20,7 +19,6 @@ import { NgbDropdownModule, NgbNavModule, NgbModule, NgbCollapseModule } from '@
     FormsModule,
     ReactiveFormsModule,
     CardComponent,
-    FoodComponent,
     BreadcrumbsComponent,
     NgbDropdownModule,
     NgbNavModule,
@@ -33,7 +31,6 @@ import { NgbDropdownModule, NgbNavModule, NgbModule, NgbCollapseModule } from '@
     FormsModule,
     ReactiveFormsModule,
     CardComponent,
-    FoodComponent,
     BreadcrumbsComponent,
     SpinnerComponent,
     NgbModule,
