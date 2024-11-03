@@ -16,7 +16,13 @@ const routes: Routes = [
       { path: 'typography', loadComponent: () => import('./demo/elements/typography/typography.component') },
       { path: 'color', loadComponent: () => import('./demo/elements/element-color/element-color.component') },
       { path: 'sample-page',loadComponent: () => import('./demo/sample-page/sample-page.component') },
+<<<<<<< HEAD
       { path: 'login', component: LoginComponent ,}
+=======
+      { path: 'food',component:FoodComponent},
+      // loadComponent: () => import('./theme/shared/components/food/food.component').then((c) => c.FoodComponent)
+      // { path: 'login', component: LoginComponent ,}
+>>>>>>> e48c7427f9f381da7a10d30214b231be83eda4d4
 
       
     ]
