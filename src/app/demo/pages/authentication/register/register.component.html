@@ -4,7 +4,8 @@
       <div class="card mt-5">
         <div class="card-body">
           <a href="javascript:" class="d-flex justify-content-center mt-3">
-            <img src="assets/images/logo-dark.svg" />
+            <img src="https://buffalonlineorderingapp.s3-accelerate.amazonaws.com/static_images/headerLogo.svg"
+            class="logo logo-lg" />
           </a>
           <div class="row">
             <div class="d-flex justify-content-center">
@@ -14,7 +15,7 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted" style="width: 100%">
+          <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted" (click)="signInWithGoogle()" style="width: 100%">
             <img src="assets/images/authentication/google-icon.svg" />
             Sign Up With Google
           </button>
@@ -37,24 +38,16 @@
             </div>
           </div>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+            <input type="email" class="form-control" [(ngModel)]="email" placeholder="name@example.com" />
             <label for="floatingInput">Email Address / Username</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+            <input type="email" class="form-control" name="password" [(ngModel)]="password" />
             <label for="floatingInput">Password</label>
           </div>
-          <div class="form-check mt-3s">
-            <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" checked="" />
-            <label class="form-check-label" for="customCheckc1">
-              <h5>
-                Agree with
-                <span>Terms & Condition.</span>
-              </h5>
-            </label>
-          </div>
+          
           <div class="d-grid mt-4">
-            <button type="button" class="btn btn-secondary p-2">Sign Up</button>
+            <button type="button" class="btn btn-secondary p-2" (click)="register()" >Sign Up</button>
           </div>
           <hr />
           <h5 class="d-flex justify-content-center">

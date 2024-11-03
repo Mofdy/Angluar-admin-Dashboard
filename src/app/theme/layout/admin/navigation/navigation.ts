@@ -77,7 +77,7 @@ const NavigationItems = [
         title: 'orderlist',
         type: 'item',
         classes: 'nav-item',
-        url: '#',
+        url: '/typography',
         icon: 'ti ti-list'
       },
       {
@@ -85,17 +85,19 @@ const NavigationItems = [
         title: 'Order Detail',
         type: 'item',
         classes: 'nav-item',
-        url: '#',
+        url: '/color',
         icon: 'ti ti-paper-bag'
       },
-      {
-        id: 'color',
-        title: 'Customer',
-        type: 'item',
-        classes: 'nav-item',
-        url: '#',
-        icon: 'ti ti-user',
-      },
+      // {
+      //   id: 'typography',
+      //   title: 'orderlist',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '#',
+      //   icon: 'ti ti-list',
+      //   breadcrumbs: false,
+
+      // },
       {
         id: 'color',
         title: 'Analytics',
@@ -103,8 +105,8 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '#',
         icon: 'ti ti-graph',
-        target: true,
-        external: true
+        breadcrumbs: false
+
       }, 
       {
         id: 'color',
@@ -116,14 +118,12 @@ const NavigationItems = [
         target: true,
         external: true
       }, {
-        id: 'tabler',
+        id: 'food',
         title: 'Foods',
         type: 'item',
         classes: 'nav-item',
-        url: '#',
+        url: '/food',
         icon: 'ti ti-shovel-pitchforks',
-        target: true,
-        external: true
       },
       {
         id: 'tabler',
@@ -132,8 +132,6 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '#',
         icon: 'ti ti-graph',
-        target: true,
-        external: true
       }, {
         id: 'tabler',
         title: 'Customer Detail',
@@ -141,8 +139,6 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '#',
         icon: 'ti ti-graph',
-        target: true,
-        external: true
       }, {
         id: 'tabler',
         title: 'Calendar',
@@ -150,8 +146,7 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '#',
         icon: 'ti ti-calendar-month',
-        target: true,
-        external: true
+        
       },
       {
         id: 'tabler',
@@ -160,8 +155,7 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '#',
         icon: 'ti ti-message-dots',
-        target: true,
-        external: true
+
       },
       {
         id: 'tabler',
@@ -170,8 +164,6 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '#',
         icon: 'ti ti-wallet',
-        target: true,
-        external: true
       }
     ]
   },

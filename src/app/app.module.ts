@@ -20,6 +20,8 @@ import { ConfigurationComponent } from './theme/layout/admin/configuration/confi
 import { GuestComponent } from './theme/layout/guest/guest.component';
 import { AngularFireModule } from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -36,10 +38,19 @@ import { environment } from 'src/environments/environment';
     NavItemComponent,
     NavCollapseComponent,
     ConfigurationComponent,
-    GuestComponent
+    GuestComponent,
+
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule , AngularFireModule.initializeApp(environment.firebase)],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    SharedModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase)
+  ],
   providers: [NavigationItem],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

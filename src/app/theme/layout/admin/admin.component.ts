@@ -20,7 +20,8 @@ export class AdminComponent {
   // Constructor
   constructor(
     private location: Location,
-    private locationStrategy: LocationStrategy
+    private locationStrategy: LocationStrategy,
+    
   ) {
     this.berryConfig = BerryConfig;
 
