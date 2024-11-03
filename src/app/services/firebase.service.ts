@@ -8,7 +8,14 @@ import { Observable } from 'rxjs';
 export class DataService {
   constructor(private firestore: AngularFirestore) {}
 
-  getItems(): Observable<any[]> {
-    return this.firestore.collection('users').valueChanges();
+  getItems( collection: string ): Observable<any[]> {
+    return this.firestore.collection(collection).valueChanges();
+  }
+  updateProduct(id: string, data: any): Promise<void> {
+    return this.firestore.collection('product').doc(id).update(data);
+  }
+
+  deleteProduct(id: string): Promise<void> {
+    return this.firestore.collection('product').doc(id).delete();
   }
 }
