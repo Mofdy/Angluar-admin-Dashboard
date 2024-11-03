@@ -22,7 +22,7 @@ export class FoodService {
     return this.firestore.doc(`product/${id}`).update(food);
   }
 
-  deleteFood(id: string): Promise<void> {
-    return this.firestore.doc(`product/${id}`).delete();
+  deleteFood(title: string): Promise<void> {
+    return this.firestore.doc(`product/title/${title}`).delete();
   }
 }

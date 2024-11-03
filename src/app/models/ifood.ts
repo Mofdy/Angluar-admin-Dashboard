@@ -24,5 +24,6 @@ export interface ifood {
       ar: string;
       en: string;
     };
+    //softDel:true;
   }
   
