@@ -4,6 +4,7 @@ import { FoodService } from 'src/app/services/food.service';
 import { SharedModule } from '../../shared.module';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-food',
@@ -16,18 +17,18 @@ export class FoodComponent implements OnInit {
   foods: ifood[] = [];
   selectedFood: ifood | null = null;
 
-  constructor(public foodService: FoodService) {}
+  constructor(public foodService: FoodService,private router:Router) {}
 
   ngOnInit() {
     this.foodService.getFoods().subscribe((foods) => {
       this.foods = foods;
-      console.log(foods);
+      // console.log(foods);
     });
   }
 
   editFood(food: ifood) {
-    this.selectedFood = { ...food };
-  }
+    this.router.navigate(['/food-Detail', food.title.en.split(' ').join('-')])
+    }
 
   // updateFood() {
   //   if (this.selectedFood) {

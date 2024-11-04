@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
 import { userguardGuard } from './demo/guards/userguard.guard';
-import LoginComponent from './demo/pages/authentication/login/login.component';
+// import LoginComponent from './demo/pages/authentication/login/login.component';
 import { FoodComponent } from './theme/shared/components/food/food.component';
+import { FoodDetailComponent } from './theme/shared/components/foodDetails/food-detail/food-detail.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,8 @@ const routes: Routes = [
       { path: 'color', loadComponent: () => import('./demo/elements/element-color/element-color.component') },
       { path: 'sample-page',loadComponent: () => import('./demo/sample-page/sample-page.component') },
       { path: 'food',component:FoodComponent},
+      { path: 'food-Detail/:id', component: FoodDetailComponent },
+      {path:'food-Detail',component:FoodDetailComponent},
       // loadComponent: () => import('./theme/shared/components/food/food.component').then((c) => c.FoodComponent)
       // { path: 'login', component: LoginComponent ,}
 
