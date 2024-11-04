@@ -11,12 +11,11 @@ import { FoodService } from 'src/app/services/food.service';
   templateUrl: './food-detail.component.html',
   styleUrls: ['./food-detail.component.scss'],
   standalone: true,
-  imports: [FormsModule,CommonModule],
-
+  imports: [FormsModule, CommonModule]
 })
 export class FoodDetailComponent implements OnInit {
   food: ifood | null = null;
-product: any;
+  product: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,18 +25,12 @@ product: any;
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id').split('-').join(' ');
-    
- 
 
     if (id) {
-      this.foodService.getDocumentByTitle('product',id).subscribe((data) => {
+      this.foodService.getDocumentByTitle('products', id).subscribe((data) => {
         this.food = data;
         console.log(this.food);
-        
       });
-   
-      
-      
     }
   }
 
@@ -46,8 +39,6 @@ product: any;
       this.foodService.updateFood(this.food.id, this.food).then(() => {
         this.router.navigate(['/food']);
         console.log(this.food);
-        
-
       });
     }
   }
