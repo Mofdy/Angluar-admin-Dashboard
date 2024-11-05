@@ -126,11 +126,11 @@ const NavigationItems = [
         icon: 'ti ti-shovel-pitchforks',
       },
       {
-        id: 'tabler',
+        id: 'food-Detail',
         title: 'Food Detail',
         type: 'item',
         classes: 'nav-item',
-        url: '#',
+        url: '/food-Detail',
         icon: 'ti ti-graph',
       }, {
         id: 'tabler',

@@ -1,30 +1,97 @@
-<div *ngFor="let food of foods">
-    <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
-    <p>{{ food.category }}</p>
-    <!-- <p>{{ food.description.en }} / {{ food.description.ar }}</p> -->
-    <img [src]="food.image" alt="{{ food.title.en }}" class="img-container">
-    <!-- <img [src]="food. " alt="{{ food.title.en }} with combo" class="img-container"> -->
-    <div *ngFor="let size of food.size">
-        <p>{{ size.title.en }} / {{ size.title.ar }} - {{ size.price | currency }}</p>
+<!-- <div class="product-grid">
+    <div *ngFor="let food of foods" class="product-item">
+      <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
+      <p>{{ food.category }}</p>
+      <img [src]="food.image" alt="{{ food.title.en }}" class="img-container">
+      
+      <div *ngIf="food.details?.size">
+        <div *ngFor="let size of food.details.size">
+          <p>{{ size.title?.en }} / {{ size.title?.ar }} - {{ size.price | currency }}</p>
+        </div>
+      </div>
+      
+      <button (click)="editFood(food)">Edit</button>
+      <button (click)="deleteFood(food.title.en)">Delete</button>
     </div>
-    <button  (click)="editFood(food)">Edit</button>
-    <button (click)="deleteFood(food.title.en)">Delete</button>
-</div>
+  </div>
+   -->
 
-<!-- <form *ngIf="selectedFood" (ngSubmit)="updateFood(selectedFood)">
-    <input [(ngModel)]="selectedFood.title.en" name="titleEn" placeholder="Title (English)" required>
-    <input [(ngModel)]="selectedFood.title.ar" name="titleAr" placeholder="Title (Arabic)" required>
-    <input [(ngModel)]="selectedFood.category" name="category" placeholder="Category" required>
-    <textarea [(ngModel)]="selectedFood.description.en" name="descriptionEn" placeholder="Description (English)"
-        required></textarea>
-    <textarea [(ngModel)]="selectedFood.description.ar" name="descriptionAr" placeholder="Description (Arabic)"
-        required></textarea>
-    <div *ngFor="let size of selectedFood.size; let i = index">
-        <input [(ngModel)]="size.title.en" name="sizeTitleEn{{i}}" placeholder="Size Title (English)" required>
-        <input [(ngModel)]="size.title.ar" name="sizeTitleAr{{i}}" placeholder="Size Title (Arabic)" required>
-        <input [(ngModel)]="size.price" name="sizePrice{{i}}" placeholder="Price" required type="number">
+<!-- <div class="product-grid">
+    <div *ngFor="let food of foods; let i = index" class="product-item">
+      
+      <h2 *ngIf="i === 0 || foods[i - 1].category !== food.category">{{ food.category }}</h2>
+      
+      <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
+      <p>{{ food.category }}</p>
+      <img [src]="food.image" alt="{{ food.title.en }}" class="img-container">
+      
+      <div *ngIf="food.details?.size">
+        <div *ngFor="let size of food.details.size">
+          <p>{{ size.title?.en }} / {{ size.title?.ar }} - {{ size.price | currency }}</p>
+        </div>
+      </div>
+      
+      <button (click)="editFood(food)">Edit</button>
+      <button (click)="deleteFood(food.title.en)">Delete</button>
     </div>
-    <input [(ngModel)]="selectedFood.image" name="image" placeholder="Image URL" required>
-    <input [(ngModel)]="selectedFood.imageWithCombo" name="imageWithCombo" placeholder="Image with Combo URL" required>
-    <button type="submit">Update</button>
-</form> -->
+  </div> -->
+
+<!-- <h2 style="text-align: center">Burgers</h2>
+<div class="product-grid">
+  <ng-container *ngFor="let food of foods">
+    <div class="product-item" *ngIf="food.category === 'burger sandwiches'">
+      <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
+      <img [src]="food.image" alt="{{ food.title.en }}" class="img-container" />
+
+      <div *ngIf="food.details?.size">
+        <div *ngFor="let size of food.details.size">
+          <p>{{ size.title?.en }} / {{ size.title?.ar }} - {{ size.price | currency }}</p>
+        </div>
+      </div>
+
+      <button (click)="editFood(food)">Edit</button>
+      <button (click)="deleteFood(food.title.en)">Delete</button>
+    </div>
+  </ng-container>
+</div> -->
+
+@for (cat of menuCategory; track $index) {
+  <h2 style="text-align: center">{{ cat.title.en }}</h2>
+  <div class="product-grid">
+    @for (food of foods; track $index) {
+      @if (food.category === cat.title.en) {
+        <div class="product-item">
+          <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
+          <img [src]="food.image" alt="{{ food.title.en }}" class="img-container" />
+
+          <div *ngIf="food.details?.size">
+            <div *ngFor="let size of food.details.size">
+              <p>{{ size.title?.en }} / {{ size.title?.ar }} - {{ size.price | currency }}</p>
+            </div>
+          </div>
+          <button (click)="editFood(food)">Edit</button>
+          <button (click)="deleteFood(food.title.en)">Delete</button>
+        </div>
+      }
+    }
+  </div>
+}
+
+<!-- <h2 style="text-align: center">Drinks</h2>
+<div class="product-grid">
+  <ng-container *ngFor="let food of foods">
+    <div class="product-item" *ngIf="food.category === 'drinks'">
+      <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
+      <img [src]="food.image" alt="{{ food.title.en }}" class="img-container" />
+
+      <div *ngIf="food.details?.size">
+        <div *ngFor="let size of food.details.size">
+          <p>{{ size.title?.en }} / {{ size.title?.ar }} - {{ size.price | currency }}</p>
+        </div>
+      </div>
+
+      <button (click)="editFood(food)">Edit</button>
+      <button (click)="deleteFood(food.title.en)">Delete</button>
+    </div>
+  </ng-container>
+</div> -->
