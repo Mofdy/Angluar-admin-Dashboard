@@ -26,6 +26,7 @@ export class FoodService {
     await this.firestore.collection('products').add(food);
   }
 
+  
    updateFood( title:string ,food: ifood): Promise<void> {
     return this.firestore.collection(`products`).doc(title).update(food);
   }
