@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-food',
   templateUrl: './food.component.html',
-  styleUrls: ['./food.component.css'],
+  styleUrls: ['./food.component.scss'],
   standalone: true,
   imports: [FormsModule,CommonModule],
 })
@@ -19,7 +19,7 @@ export class FoodComponent implements OnInit {
   constructor(public foodService: FoodService) {}
 
   ngOnInit() {
-    this.foodService.getFoods().subscribe((foods) => {
+    this.foodService.getFoods('product').subscribe((foods) => {
       this.foods = foods;
       console.log(foods);
     });
@@ -31,7 +31,7 @@ export class FoodComponent implements OnInit {
 
   // updateFood() {
   //   if (this.selectedFood) {
-  //     this.foodService.updateFood(this.selectedFood.id, this.selectedFood).then(() => {
+  //     this.foodService.updateFood(this.selectedFood.en, this.selectedFood).then(() => {
   //       this.selectedFood = null;
   //     });
   //   }

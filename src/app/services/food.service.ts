@@ -10,19 +10,19 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class FoodService {
   constructor(private firestore: AngularFirestore) {}
 
-  getFoods(): Observable<ifood[]> {
-    return this.firestore.collection<ifood>('product').valueChanges();
+  getFoods(collection:string): Observable<ifood[]> {
+    return this.firestore.collection<ifood>(collection).valueChanges();
   }
 
   async addFood(food: ifood): Promise<void> {
     await this.firestore.collection('product').add(food);
   }
 
-  updateFood(id: string, food: ifood): Promise<void> {
-    return this.firestore.doc(`product/${id}`).update(food);
+  updateFood(title: string, food: ifood): Promise<void> {
+    return this.firestore.collection('product').doc(title).update(food);
   }
 
   deleteFood(title: string): Promise<void> {
-    return this.firestore.doc(`product/title/${title}`).delete();
+    return this.firestore.collection('product').doc(title).delete();
   }
 }
