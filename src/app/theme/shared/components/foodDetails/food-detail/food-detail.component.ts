@@ -14,7 +14,6 @@ import { FoodService } from 'src/app/services/food.service';
 })
 export class FoodDetailComponent implements OnInit {
   food: ifood | null = null;
-  product: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +35,7 @@ export class FoodDetailComponent implements OnInit {
   updateFood() {
     if (this.food) {
       this.foodService.updateFood(this.food.id, this.food).then(() => {
-        
+
         this.router.navigate(['/food']);
         console.log(this.food);
       });

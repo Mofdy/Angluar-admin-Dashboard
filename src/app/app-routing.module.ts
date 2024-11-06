@@ -7,6 +7,7 @@ import { userguardGuard } from './demo/guards/userguard.guard';
 import { FoodComponent } from './theme/shared/components/food/food.component';
 import { FoodDetailComponent } from './theme/shared/components/foodDetails/food-detail/food-detail.component';
 import { AddFoodComponent } from './theme/shared/components/add-food/add-food.component';
+import { OfferDetailsComponent } from './theme/shared/components/offer-details/offer-details.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
       { path: 'food-Detail/:id', component: FoodDetailComponent },
       {path:'food-Detail',component:FoodDetailComponent},
       { path: 'add-food', component: AddFoodComponent},
+      { path: 'offer-Details/:id', component: OfferDetailsComponent },
+      { path: 'offer-Details', component: OfferDetailsComponent },
+
       
       // loadComponent: () => import('./theme/shared/components/food/food.component').then((c) => c.FoodComponent)
       

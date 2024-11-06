@@ -85,14 +85,15 @@
         <img [src]="food.image" width="300" height="300" *ngIf="food.image">
     </div>
 
-    <div>
-        <label for="imageWithCombo">Image with Combo</label>
-        <input [(ngModel)]="food.imageWithCombo" id="imageWithCombo" name="imageWithCombo"
-            placeholder="Image with Combo URL" required>
+    <div *ngIf="['burger sandwiches', 'chicken sandwiches', 'keto & light sandwiches'].includes(food.category)">
+        <div>
+            <label for="imageWithCombo">Image with Combo</label>
+            <input [(ngModel)]="food.imageWithCombo" id="imageWithCombo" name="imageWithCombo"
+                placeholder="Image with Combo URL" required>
+        </div>
+        <div>
+            <img [src]="food.imageWithCombo" *ngIf="food.imageWithCombo">
+        </div>
     </div>
-    <div>
-        <img [src]="food.imageWithCombo" *ngIf="food.imageWithCombo">
-    </div>
-
     <button type="submit">Add Product</button>
 </form>

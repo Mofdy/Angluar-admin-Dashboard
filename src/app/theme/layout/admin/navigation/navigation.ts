@@ -117,11 +117,11 @@ const NavigationItems = [
         icon: 'ti ti-graph',
       }, 
       {
-        id: 'tabler',
-        title: 'Customer Detail',
+        id: 'offer-Details',
+        title: 'Offer Details',
         type: 'item',
         classes: 'nav-item',
-        url: '#',
+        url: '/offer-Details',
         icon: 'ti ti-graph',
       }, 
       

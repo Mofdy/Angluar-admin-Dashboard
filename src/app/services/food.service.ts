@@ -17,11 +17,6 @@ export class FoodService {
   getCategories(): Observable<Icategories[]> {
     return this.firestore.collection<Icategories>('categories').valueChanges();
   }
-  
-  // getFoodById(id: string): Observable<ifood | undefined> {
-  //   return this.firestore.collection<ifood>('product',prd=>prd.where()).doc(id).valueChanges();
-  // }
-
 
   async addFood(food: ifood): Promise<void> {
     await this.firestore.collection('products').add(food);
@@ -33,7 +28,7 @@ export class FoodService {
   }
 
   async deleteFood(titleEn: string): Promise<void> {
-   const snapshot = await this.firestore.collection('products', ref_1 => ref_1.where('title.en', '==', titleEn))
+    const snapshot = await this.firestore.collection('products', ref_1 => ref_1.where('title.en', '==', titleEn))
       .get()
       .toPromise();
     snapshot.forEach(doc => { doc.ref.delete(); });
@@ -42,10 +37,10 @@ export class FoodService {
   getDocumentByTitle(collection: string, titleEn: string): Observable<any> {
     return this.firestore
       .collection(collection, ref => ref.where('title.en', '==', titleEn))
-    .valueChanges({ idField: 'id' }) // جلب الـ ID مع الوثيقة
-    .pipe(
-      map(docs => (docs.length > 0 ? docs[0] : null)) // جلب أول وثيقة مطابقة
-    );
-}
+      .valueChanges({ idField: 'id' }) // جلب الـ ID مع الوثيقة
+      .pipe(
+        map(docs => (docs.length > 0 ? docs[0] : null)) // جلب أول وثيقة مطابقة
+      );
+  }
 
 }
