@@ -16,17 +16,17 @@
                 <i class="ti ti-dots"></i>
               </a>
               <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
-                <li><button class="dropdown-item" (click)="fetchItems()"  type="button">Import Card</button></li>
+                <li><button class="dropdown-item" type="button">Import Card</button></li>
                 <li><button class="dropdown-item" type="button">Export</button></li>
               </ul>
             </div>
           </div>
         </div>
         <span class="text-white d-block f-34 f-w-500 my-2">
-          $500.00
+          {{ totalForToday | currency: 'EGP' }}
           <i class="ti ti-circle-arrow-up-right opacity-50"></i>
         </span>
-        <p class="mb-0 opacity-50">Total Earning</p>
+        <p class="mb-0 opacity-50">Today's Sales</p>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@
             <i class="text-white ti ti-layout-board-split f-24"></i>
           </div>
           <div class="ms-2">
-            <h4 class="text-white f-w-600 mb-1">$203k</h4>
+            <h4 class="text-white f-w-600 mb-1">{{ total | currency: 'EGP' }}</h4>
             <p class="mb-0 opacity-50 text-sm">Total Income</p>
           </div>
         </div>
@@ -60,7 +60,7 @@
             <i class="text-warning ti ti-layout-board-split f-24"></i>
           </div>
           <div class="ms-2">
-            <h4 class="f-w-600 mb-1">$203k</h4>
+            <h4 class="f-w-600 mb-1">{{ total | currency: 'EGP' }}</h4>
             <p class="mb-0 opacity-50 text-sm">Total Income</p>
           </div>
         </div>
@@ -88,13 +88,13 @@
                 <small class="text-muted">10% Profit</small>
               </div>
               <div class="col-auto">
-                <h4 class="mb-0">$1839.00</h4>
+                <h4 class="mb-0">{{ total | currency: 'EGP' }}</h4>
               </div>
             </div>
           </div>
           <app-bajaj-chart />
         </div>
-        <ul class="list-group list-group-flush">
+        <!-- <ul class="list-group list-group-flush">
           @for (list of ListGroup; track list) {
             <li class="list-group-item px-0 {{ list.space }}">
               <div class="row align-items-start">
@@ -113,7 +113,7 @@
               </div>
             </li>
           }
-        </ul>
+        </ul> -->
         <div class="text-center">
           <a href="javascript:" class="b-b-primary text-primary f-w-500">
             View all
