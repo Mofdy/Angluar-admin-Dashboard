@@ -73,59 +73,60 @@ const NavigationItems = [
     icon: 'icon-navigation',
     children: [
       {
-        id: 'typography',
-        title: 'Typography',
+        id: 'Add Food',
+        title: 'Add Food',
         type: 'item',
         classes: 'nav-item',
-        url: '/typography',
-        icon: 'ti ti-typography'
+        url: '/add-food',
+        icon: 'ti ti-paper-bag'
+      },
+      // Analytics
+      // {
+      //   id: 'color',
+      //   title: 'Analytics',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '#',
+      //   icon: 'ti ti-graph',
+      //   breadcrumbs: false
+      // }, 
+      // {
+      //   id: 'color',
+      //   title: 'Reviews',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '#',
+      //   icon: 'ti ti-stars',
+      //   target: true,
+      //   external: true
+      // },
+       {
+        id: 'food',
+        title: 'Foods',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/food',
+        icon: 'ti ti-shovel-pitchforks',
       },
       {
-        id: 'color',
-        title: 'Colors',
+        id: 'food-Detail',
+        title: 'Food Detail',
         type: 'item',
         classes: 'nav-item',
-        url: '/color',
-        icon: 'ti ti-brush'
-      },
+        url: '/food-Detail',
+        icon: 'ti ti-graph',
+      }, 
       {
-        id: 'tabler',
-        title: 'Tabler',
+        id: 'offer-Details',
+        title: 'Offer Details',
         type: 'item',
         classes: 'nav-item',
-        url: 'https://tabler-icons.io/',
-        icon: 'ti ti-plant-2',
-        target: true,
-        external: true
-      }
+        url: '/offer-Details',
+        icon: 'ti ti-graph',
+      }, 
+      
     ]
   },
-  {
-    id: 'other',
-    title: 'Other',
-    type: 'group',
-    icon: 'icon-navigation',
-    children: [
-      {
-        id: 'sample-page',
-        title: 'Sample Page',
-        type: 'item',
-        url: '/sample-page',
-        classes: 'nav-item',
-        icon: 'ti ti-brand-chrome'
-      },
-      {
-        id: 'document',
-        title: 'Document',
-        type: 'item',
-        classes: 'nav-item',
-        url: 'https://codedthemes.gitbook.io/berry-angular/',
-        icon: 'ti ti-vocabulary',
-        target: true,
-        external: true
-      }
-    ]
-  }
 ];
 
 @Injectable()

@@ -18,6 +18,11 @@ import { NavItemComponent } from './theme/layout/admin/navigation/nav-content/na
 import { SharedModule } from './theme/shared/shared.module';
 import { ConfigurationComponent } from './theme/layout/admin/configuration/configuration.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
+import { AngularFireModule } from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -33,10 +38,19 @@ import { GuestComponent } from './theme/layout/guest/guest.component';
     NavItemComponent,
     NavCollapseComponent,
     ConfigurationComponent,
-    GuestComponent
+    GuestComponent,
+
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    SharedModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase)
+  ],
   providers: [NavigationItem],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

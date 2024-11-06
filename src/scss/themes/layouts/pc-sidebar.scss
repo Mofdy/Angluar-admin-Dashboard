@@ -4,6 +4,7 @@
 
 .pc-sidebar {
   background: $sidebar-background;
+  color: $sidebar-color;
   width: $sidebar-width;
   position: fixed;
   top: $header-height;
@@ -26,6 +27,7 @@
       display: none;
     }
   }
+
   .navbar-content {
     position: relative;
     height: calc(100vh - #{$header-height});
@@ -60,10 +62,12 @@
       height: 200px;
     }
   }
+
   .m-header {
     display: none;
   }
 }
+
 .pc-sidebar.mob-open .m-header {
   display: flex;
 }
