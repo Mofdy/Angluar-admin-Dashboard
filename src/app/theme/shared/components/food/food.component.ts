@@ -15,7 +15,7 @@ import { OfferService } from 'src/app/services/offer.service';
   templateUrl: './food.component.html',
   styleUrls: ['./food.component.scss'],
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule]
 })
 export class FoodComponent implements OnInit {
   foods: ifood[] = [];
@@ -27,7 +27,8 @@ export class FoodComponent implements OnInit {
   constructor(
     public foodService: FoodService,
     public offerService: OfferService,
-    private router: Router) { }
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.foodService.getFoods().subscribe((data) => {
@@ -45,20 +46,22 @@ export class FoodComponent implements OnInit {
   }
 
   editFood(food: ifood) {
-    this.router.navigate(['/food-Detail', food.title.en.split(' ').join('-')])
+    this.router.navigate(['/food-Detail', food.title.en.split(' ').join('-')]);
   }
 
   deleteFood(id: string) {
-    this.foodService.deleteFood(id).then(() => {
-      {
-        console.log('food deleted');
-      }
-    });
+    if (confirm('Are you sure you want to delete')) {
+      this.foodService.deleteFood(id).then(() => {
+        {
+          console.log('food deleted');
+        }
+      });
+    }
   }
 
   editOffer(offer: IOffer) {
-    this.router.navigate(['/offer-Details', offer.title.en.split(' ').join('-')])
-  };
+    this.router.navigate(['/offer-Details', offer.title.en.split(' ').join('-')]);
+  }
 
   deleteOffer(id: string) {
     this.offerService.deleteOffer(id).then(() => {

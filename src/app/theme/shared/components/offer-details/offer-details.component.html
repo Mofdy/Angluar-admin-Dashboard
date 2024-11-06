@@ -1,104 +1,103 @@
 <form *ngIf="offer" (ngSubmit)="updateOffer()">
-    <!-- Title -->
+  <!-- Title -->
+  <div>
+    <label for="title-en">Title (EN):</label>
+    <input id="title-en" [(ngModel)]="offer.title.en" id="titleEn" name="titleEn" placeholder="Title (English)" required />
+  </div>
+  <div>
+    <label for="title-ar">Title (AR):</label>
+    <input id="title-ar" [(ngModel)]="offer.title.ar" name="titleAr" />
+  </div>
+
+  <!-- Description -->
+  <div>
+    <label for="description-en">Description (EN):</label>
+    <input id="description-en" [(ngModel)]="offer.description.en" name="descriptionEn" />
+  </div>
+  <div>
+    <label for="description-ar">Description (AR):</label>
+    <input id="description-ar" [(ngModel)]="offer.description.ar" name="descriptionAr" />
+  </div>
+
+  <!-- Available Drinks -->
+  <div *ngFor="let drink of offer.availableDrinks; let i = index">
     <div>
-        <label for="title-en">Title (EN):</label>
-        <input id="title-en" [(ngModel)]="offer.title.en" id="titleEn" name="titleEn" placeholder="Title (English)" required>
+      <label for="drink-title-en-{{ i }}">Drink Title (EN):</label>
+      <input id="drink-title-en-{{ i }}" [(ngModel)]="drink.title.en" name="drinkTitleEn{{ i }}" />
+
+      <label for="drink-title-ar-{{ i }}">Drink Title (AR):</label>
+      <input id="drink-title-ar-{{ i }}" [(ngModel)]="drink.title.ar" name="drinkTitleAr{{ i }}" />
+
+      <label for="drink-price-{{ i }}">Price:</label>
+      <input id="drink-price-{{ i }}" [(ngModel)]="drink.price" name="drinkPrice{{ i }}" type="number" />
     </div>
+  </div>
+
+  <!-- Available Fries -->
+  <div *ngFor="let fry of offer.availableFries; let i = index">
     <div>
-        <label for="title-ar">Title (AR):</label>
-        <input id="title-ar" [(ngModel)]="offer.title.ar" name="titleAr">
-    </div>
+      <label for="fry-title-en-{{ i }}">Fries Title (EN):</label>
+      <input id="fry-title-en-{{ i }}" [(ngModel)]="fry.title.en" name="fryTitleEn{{ i }}" />
 
-    <!-- Description -->
+      <label for="fry-title-ar-{{ i }}">Fries Title (AR):</label>
+      <input id="fry-title-ar-{{ i }}" [(ngModel)]="fry.title.ar" name="fryTitleAr{{ i }}" />
+
+      <label for="fry-price-{{ i }}">Price:</label>
+      <input id="fry-price-{{ i }}" [(ngModel)]="fry.price" name="fryPrice{{ i }}" type="number" />
+    </div>
+  </div>
+
+  <div class="product-selection">
+    <!-- <input type="text" [value]="selectedProducts.join(', ')" readonly /> -->
+
+    <h3>available products</h3>
+    <div class="selected-products" style="background-color: white">
+      <div style="width: fit-content" *ngFor="let product of selectedProducts" class="selected-product">
+        {{ product }}
+        <button class="remove-button" style="width: fit-content" (click)="removeProduct(product)">×</button>
+      </div>
+         
+    </div>
+    <h3>Selected products</h3>
+    <div class="available-products">
+      <button *ngFor="let product of availableProducts" style="width: fit-content" (click)="addProduct(product)">{{ product }} +</button>
+    </div>
+  </div>
+
+  <!-- Images -->
+  <div>
+    <label for="image">Image:</label>
+    <input id="image" [(ngModel)]="offer.image" name="image" />
+  </div>
+  <div>
+    <label for="keenImage">Keen Image:</label>
+    <input id="keenImage" [(ngModel)]="offer.keenImage" name="keenImage" />
+  </div>
+  <div>
+    <label for="swiperMobileImage">Swiper Mobile Image:</label>
+    <input id="swiperMobileImage" [(ngModel)]="offer.swiperMobileImage" name="swiperMobileImage" />
+  </div>
+  <div>
+    <label for="swiperWebImage">Swiper Web Image:</label>
+    <input id="swiperWebImage" [(ngModel)]="offer.swiperWebImage" name="swiperWebImage" />
+  </div>
+
+  <!-- Price -->
+  <div>
+    <label for="price">Price:</label>
+    <input id="price" [(ngModel)]="offer.price" name="price" type="number" />
+  </div>
+
+  <!-- Tabs -->
+  <div *ngFor="let tab of offer.tabs; let i = index">
     <div>
-        <label for="description-en">Description (EN):</label>
-        <input id="description-en" [(ngModel)]="offer.description.en" name="descriptionEn">
+      <label for="tab-title-en-{{ i }}">Tab Title (EN):</label>
+      <input id="tab-title-en-{{ i }}" [(ngModel)]="tab.title.en" name="tabTitleEn{{ i }}" />
+
+      <label for="tab-title-ar-{{ i }}">Tab Title (AR):</label>
+      <input id="tab-title-ar-{{ i }}" [(ngModel)]="tab.title.ar" name="tabTitleAr{{ i }}" />
     </div>
-    <div>
-        <label for="description-ar">Description (AR):</label>
-        <input id="description-ar" [(ngModel)]="offer.description.ar" name="descriptionAr">
-    </div>
+  </div>
 
-    <!-- Available Drinks -->
-    <div *ngFor="let drink of offer.availableDrinks; let i = index">
-        <div>
-            <label for="drink-title-en-{{i}}">Drink Title (EN):</label>
-            <input id="drink-title-en-{{i}}" [(ngModel)]="drink.title.en" name="drinkTitleEn{{i}}">
-
-            <label for="drink-title-ar-{{i}}">Drink Title (AR):</label>
-            <input id="drink-title-ar-{{i}}" [(ngModel)]="drink.title.ar" name="drinkTitleAr{{i}}">
-
-            <label for="drink-price-{{i}}">Price:</label>
-            <input id="drink-price-{{i}}" [(ngModel)]="drink.price" name="drinkPrice{{i}}" type="number">
-        </div>
-    </div>
-
-    <!-- Available Fries -->
-    <div *ngFor="let fry of offer.availableFries; let i = index">
-        <div>
-            <label for="fry-title-en-{{i}}">Fries Title (EN):</label>
-            <input id="fry-title-en-{{i}}" [(ngModel)]="fry.title.en" name="fryTitleEn{{i}}">
-
-            <label for="fry-title-ar-{{i}}">Fries Title (AR):</label>
-            <input id="fry-title-ar-{{i}}" [(ngModel)]="fry.title.ar" name="fryTitleAr{{i}}">
-
-            <label for="fry-price-{{i}}">Price:</label>
-            <input id="fry-price-{{i}}" [(ngModel)]="fry.price" name="fryPrice{{i}}" type="number">
-        </div>
-    </div>
-
-    <!-- Available Products -->
-    <div>
-        <label for="available-products">Available Products:</label>
-        <input id="available-products" [(ngModel)]="offer.availableProducts" name="availableProducts">
-    </div>
-    <!-- <div *ngFor="let prd of offer.availableProductslet i = index">
-        <div>
-            <label for="fry-title-en-{{i}}">Fries Title (EN):</label>
-            <input id="fry-title-en-{{i}}" [(ngModel)]="prd.title.en" name="fryTitleEn{{i}}">
-
-            <label for="fry-title-ar-{{i}}">Fries Title (AR):</label>
-            <input id="fry-title-ar-{{i}}" [(ngModel)]="prd.title.ar" name="fryTitleAr{{i}}">
-
-            <label for="fry-price-{{i}}">Price:</label>
-            <input id="fry-price-{{i}}" [(ngModel)]="prd.price" name="fryPrice{{i}}" type="number">
-        </div>
-    </div> -->
-
-    <!-- Images -->
-    <div>
-        <label for="image">Image:</label>
-        <input id="image" [(ngModel)]="offer.image" name="image">
-    </div>
-    <div>
-        <label for="keenImage">Keen Image:</label>
-        <input id="keenImage" [(ngModel)]="offer.keenImage" name="keenImage">
-    </div>
-    <div>
-        <label for="swiperMobileImage">Swiper Mobile Image:</label>
-        <input id="swiperMobileImage" [(ngModel)]="offer.swiperMobileImage" name="swiperMobileImage">
-    </div>
-    <div>
-        <label for="swiperWebImage">Swiper Web Image:</label>
-        <input id="swiperWebImage" [(ngModel)]="offer.swiperWebImage" name="swiperWebImage">
-    </div>
-
-    <!-- Price -->
-    <div>
-        <label for="price">Price:</label>
-        <input id="price" [(ngModel)]="offer.price" name="price" type="number">
-    </div>
-
-    <!-- Tabs -->
-    <div *ngFor="let tab of offer.tabs; let i = index">
-        <div>
-            <label for="tab-title-en-{{i}}">Tab Title (EN):</label>
-            <input id="tab-title-en-{{i}}" [(ngModel)]="tab.title.en" name="tabTitleEn{{i}}">
-
-            <label for="tab-title-ar-{{i}}">Tab Title (AR):</label>
-            <input id="tab-title-ar-{{i}}" [(ngModel)]="tab.title.ar" name="tabTitleAr{{i}}">
-        </div>
-    </div>
-
-    <button type="submit">Save</button>
+  <button type="submit">Save</button>
 </form>
