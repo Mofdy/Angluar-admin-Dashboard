@@ -5,7 +5,6 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Title } from '@angular/platform-browser';
 import { Icategories } from '../models/icategories';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -18,9 +17,11 @@ export class FoodService {
   getCategories(): Observable<Icategories[]> {
     return this.firestore.collection<Icategories>('categories').valueChanges();
   }
+  
   // getFoodById(id: string): Observable<ifood | undefined> {
   //   return this.firestore.collection<ifood>('product',prd=>prd.where()).doc(id).valueChanges();
   // }
+
 
   async addFood(food: ifood): Promise<void> {
     await this.firestore.collection('products').add(food);
@@ -48,6 +49,3 @@ export class FoodService {
 }
 
 }
-
-
-
