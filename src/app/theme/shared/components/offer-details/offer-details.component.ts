@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IOffer } from 'src/app/models/ioffer';
 import { OfferService } from 'src/app/services/offer.service';
 import { SharedModule } from '../../shared.module';
+import { FoodService } from 'src/app/services/food.service';
 
 @Component({
   selector: 'app-offer-details',
@@ -14,11 +15,13 @@ import { SharedModule } from '../../shared.module';
 })
 export class OfferDetailsComponent implements OnInit {
   offer: IOffer | null = null;
+  availableProducts: string []= [];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private offerService: OfferService,
+    private foodservice: FoodService,
   ) { }
   ngOnInit(): void {
     const titleEn = this.route.snapshot.paramMap.get('id').split('-').join(' ');
@@ -27,8 +30,15 @@ export class OfferDetailsComponent implements OnInit {
       this.offerService.getOfferByTitleEn(titleEn).subscribe((data) => {
         this.offer = data;
         console.log(this.offer);
+
       });
     }
+    this.foodservice.getFoods().subscribe((data) => {
+      this.availableProducts = data.filter(
+        food => food.category == "burger sandwiches"|| food.category == "chicken sandwiches"|| food.category == "keto & light sandwiches")
+      .map( food => food.title.en);
+      console.log(this.availableProducts);
+    });
   }
   updateOffer(): void {
     if (this.offer) {

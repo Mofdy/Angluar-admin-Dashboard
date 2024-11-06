@@ -8,6 +8,7 @@ import { FoodComponent } from './theme/shared/components/food/food.component';
 import { FoodDetailComponent } from './theme/shared/components/foodDetails/food-detail/food-detail.component';
 import { AddFoodComponent } from './theme/shared/components/add-food/add-food.component';
 import { OfferDetailsComponent } from './theme/shared/components/offer-details/offer-details.component';
+import { AddOfferComponent } from './theme/shared/components/add-offer/add-offer.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'food-Detail/:id', component: FoodDetailComponent },
       {path:'food-Detail',component:FoodDetailComponent},
       { path: 'add-food', component: AddFoodComponent},
+      {path: 'add-offer', component: AddOfferComponent},
       { path: 'offer-Details/:id', component: OfferDetailsComponent },
       { path: 'offer-Details', component: OfferDetailsComponent },
 

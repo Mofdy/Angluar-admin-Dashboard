@@ -52,6 +52,18 @@
         <label for="available-products">Available Products:</label>
         <input id="available-products" [(ngModel)]="offer.availableProducts" name="availableProducts">
     </div>
+    <!-- <div *ngFor="let prd of offer.availableProductslet i = index">
+        <div>
+            <label for="fry-title-en-{{i}}">Fries Title (EN):</label>
+            <input id="fry-title-en-{{i}}" [(ngModel)]="prd.title.en" name="fryTitleEn{{i}}">
+
+            <label for="fry-title-ar-{{i}}">Fries Title (AR):</label>
+            <input id="fry-title-ar-{{i}}" [(ngModel)]="prd.title.ar" name="fryTitleAr{{i}}">
+
+            <label for="fry-price-{{i}}">Price:</label>
+            <input id="fry-price-{{i}}" [(ngModel)]="prd.price" name="fryPrice{{i}}" type="number">
+        </div>
+    </div> -->
 
     <!-- Images -->
     <div>

@@ -80,6 +80,15 @@ const NavigationItems = [
         url: '/add-food',
         icon: 'ti ti-paper-bag'
       },
+      {
+        id: 'Add Offer',
+        title: 'Add Offer',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/add-offer',
+        icon: 'ti ti-paper-bag'
+      },
+
       // Analytics
       // {
       //   id: 'color',

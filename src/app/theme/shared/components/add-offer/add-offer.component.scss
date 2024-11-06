@@ -28,7 +28,7 @@ form {
   }
   
   input:focus, textarea:focus {
-    border-color: #007bff;
+    border-color: #ff5f00;
     outline: none;
   }
   
@@ -38,6 +38,7 @@ form {
     border: none;
     cursor: pointer;
     font-weight: bold;
+    width: 25%;
   }
   
   button:hover {
