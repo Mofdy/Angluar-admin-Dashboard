@@ -20,7 +20,7 @@ export interface ifood {
     };
     image: string;
     imageWithCombo?: string;
-    price: string;
+    price: number;
     title: {
       ar: string;
       en: string;

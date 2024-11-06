@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ifood } from 'src/app/models/ifood';
 import { FoodService } from 'src/app/services/food.service';
-// import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-food-detail',
@@ -24,10 +23,10 @@ export class FoodDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.paramMap.get('id').split('-').join(' ');
+    const titleEn = this.route.snapshot.paramMap.get('id').split('-').join(' ');
 
-    if (id) {
-      this.foodService.getDocumentByTitle('products', id).subscribe((data) => {
+    if (titleEn) {
+      this.foodService.getDocumentByTitle('products', titleEn).subscribe((data) => {
         this.food = data;
         console.log(this.food);
       });
@@ -37,6 +36,7 @@ export class FoodDetailComponent implements OnInit {
   updateFood() {
     if (this.food) {
       this.foodService.updateFood(this.food.id, this.food).then(() => {
+        
         this.router.navigate(['/food']);
         console.log(this.food);
       });
