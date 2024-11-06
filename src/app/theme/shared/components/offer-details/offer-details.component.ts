@@ -32,8 +32,11 @@ export class OfferDetailsComponent implements OnInit {
   }
   updateOffer(): void {
     if (this.offer) {
-      this.offerService.updateOffer(this.offer.title.en , this.offer)
-      .then(() => { this.router.navigate(['/food']); });
+      this.offerService.updateOffer(this.offer.id, this.offer).then(() => {
+
+        this.router.navigate(['/food']);
+        console.log(this.offer);
+      });
     }
   }
 }
