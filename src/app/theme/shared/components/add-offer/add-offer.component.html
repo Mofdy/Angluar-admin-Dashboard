@@ -21,8 +21,8 @@
         </div>
 
         <!-- Available Drinks -->
-        <!-- <div *ngFor="let drink of offer.availableDrinks; let i = index">
-        <!-- <div *ngFor="let drink of offer.availableDrinks; let i = index">
+        <div *ngFor="let drink of offer.availableDrinks; let i = index">
+        <div *ngFor="let drink of offer.availableDrinks; let i = index">
             <div>
                 <label for="drink-title-en-{{i}}">Drink Title (EN):</label>
                 <input id="drink-title-en-{{i}}" [(ngModel)]="drink.title.en" name="drinkTitleEn{{i}}">
@@ -34,12 +34,12 @@
                 <input id="drink-price-{{i}}" [(ngModel)]="drink.price" name="drinkPrice{{i}}" type="number">
                 <button type="button" (click)="removeDrink(i)">Remove</button>
             </div>
-        </div> -->
-        </div> -->
+        </div>
+        </div> 
 
         <!-- Available Fries -->
         <!-- <div *ngFor="let fry of offer.availableFries; let i = index">
-        <!-- <div *ngFor="let fry of offer.availableFries; let i = index">
+        <div *ngFor="let fry of offer.availableFries; let i = index">
             <div>
                 <label for="fry-title-en-{{i}}">Fries Title (EN):</label>
                 <input id="fry-title-en-{{i}}" [(ngModel)]="fry.title.en" name="fryTitleEn{{i}}">
