@@ -18,7 +18,7 @@ export interface IOffer {
     price: number;
     swiperMobileImage: string;
     swiperWebImage: string;
-    tabs: {
+    tabs?: {
         title: Title;
     }[];
     title: Title;

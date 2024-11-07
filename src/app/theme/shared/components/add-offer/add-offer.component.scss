@@ -1,0 +1,241 @@
+form {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  font-family: Arial, sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #fb8744;
+  outline:none;
+}
+
+button {
+  background-color: #ff5f00;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #fc8541;
+}
+
+
+.product-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.available-products,
+.selected-products {
+  background-color: #f1f3f4;
+  padding: 15px;
+  border-radius: 5px;
+  // display: flex;
+  // flex-wrap: wrap;
+  // gap: 20px;
+}
+
+.available-products h3,
+.selected-products h3 {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+button {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #ff5f00;
+}
+
+.selected-products .selected-product {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ff5f00;
+  color: white;
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin: 5px;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 0;
+  background-color: #ff5f00;
+}
+
+.tab-container {
+  display: flex;
+  background-color: #111;
+  justify-content: center;
+  padding: 10px 0;
+}
+.add-tab-container {
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.buttonTab {
+  padding: 8px 12px;
+  background-color: #ff5c00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttonTab:hover {
+  background-color: #e65100;
+}
+
+.tab {
+  color: white;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab.active {
+  background-color: #ff5c00;
+  border-radius: 5px;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #ff5c00;
+  cursor: pointer;
+}
+
+.option input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+
+.tab-container {
+  display: flex;
+  background-color: #111;
+  justify-content: center;
+  padding: 10px 0;
+}
+.add-tab-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.buttonTab {
+  padding: 8px 12px;
+  background-color: #ff5c00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttonTab:hover {
+  background-color: #e65100;
+}
+
+.tab {
+  color: white;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tab.active {
+  background-color: #ff5c00;
+  border-radius: 5px;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #ff5c00;
+  cursor: pointer;
+}
+
+.option input[type="radio"] {
+  margin-right: 8px;
+  cursor: pointer;
+}

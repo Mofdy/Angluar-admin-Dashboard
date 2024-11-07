@@ -16,6 +16,9 @@ import { ifood } from 'src/app/models/ifood';
 })
 export class OfferDetailsComponent implements OnInit {
   offer: IOffer | null = null;
+  availableProducts: string []= [];
+  cat: ifood[] = [];
+  selectedProducts: string[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -23,33 +26,28 @@ export class OfferDetailsComponent implements OnInit {
     private offerService: OfferService,
     private food: FoodService
   ) {}
-  cat: ifood[] = [];
-  availableProducts: string[] = [];
-  selectedProducts: string[] = [];
+  
   ngOnInit(): void {
     const titleEn = this.route.snapshot.paramMap.get('id').split('-').join(' ');
 
     if (titleEn) {
       this.offerService.getOfferByTitleEn(titleEn).subscribe((data) => {
         this.offer = data;
-        // console.log(this.offer);
         this.selectedProducts = data.availableProducts;
       });
     }
+
     this.food.getFoods().subscribe((data) => {
       this.availableProducts = data
-        .filter((food) => food.category == 'burger sandwiches' || food.category == 'chicken sandwiches')
+        .filter((food) => food.category == 'burger sandwiches' || food.category == 'chicken sandwiches' || food.category == "keto & light sandwiches")
         .map((food) => food.title.en);
       this.availableProducts = this.availableProducts.filter((product) => !this.selectedProducts.includes(product));
-
-      console.log(this.availableProducts);
     });
   }
   updateOffer(): void {
     if (this.offer) {
       this.offerService.updateOffer(this.offer.id, this.offer).then(() => {
         this.router.navigate(['/food']);
-        console.log(this.offer);
       });
     }
   }
