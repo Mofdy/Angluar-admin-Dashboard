@@ -25,12 +25,14 @@ export class DefaultComponent implements OnInit {
   ordersToday: number = 0;
   ordersThisWeek: number = 0;
   ordersThisMonth: number = 0;
-
+  totalusers: number = 0;
   ngOnInit() {
     this.dataService.getItems('orders').subscribe((items) => {
       this.totalOrders = items.length;
-      console.log(items);
       this.calculateTotals(items);
+    });
+    this.dataService.getItems('users').subscribe((items) => {
+      this.totalusers = items.length;
     });
   }
 

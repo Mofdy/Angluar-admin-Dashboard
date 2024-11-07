@@ -116,15 +116,15 @@
   <div class="orders-stats">
     <div class="stat-card">
       <h3>Today's Sales</h3>
-      <p class="stat-number">{{ordersToday}}</p>
+      <p class="stat-number">{{ ordersToday }}</p>
     </div>
     <div class="stat-card">
       <h3>Weekly Sales</h3>
-      <p class="stat-number">{{ordersThisWeek}}</p>
+      <p class="stat-number">{{ ordersThisWeek }}</p>
     </div>
     <div class="stat-card">
       <h3>Monthly Sales</h3>
-      <p class="stat-number">{{ordersThisMonth}}</p>
+      <p class="stat-number">{{ ordersThisMonth }}</p>
     </div>
   </div>
 
@@ -132,15 +132,19 @@
   <div class="revenue-stats">
     <div class="stat-card">
       <h3>Today's Revenue</h3>
-      <p class="stat-number">{{totalForToday|currency:'EGP':'symbol':'1.0-0'}}</p>
+      <p class="stat-number">{{ totalForToday | currency: 'EGP' : 'symbol' : '1.0-0' }}</p>
     </div>
     <div class="stat-card">
       <h3>Weekly Revenue</h3>
-      <p class="stat-number">{{totalForCurrentWeek|currency:'EGP':'symbol':'1.0-0'}}</p>
+      <p class="stat-number">{{ totalForCurrentWeek | currency: 'EGP' : 'symbol' : '1.0-0' }}</p>
     </div>
     <div class="stat-card">
       <h3>Monthly Revenue</h3>
-      <p class="stat-number">{{total|currency:'EGP':'symbol':'1.0-0'}}</p>
+      <p class="stat-number">{{ total | currency: 'EGP' : 'symbol' : '1.0-0' }}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Total Registered Users</h3>
+      <p class="stat-number">{{ totalusers }}</p>
     </div>
   </div>
 </div>
