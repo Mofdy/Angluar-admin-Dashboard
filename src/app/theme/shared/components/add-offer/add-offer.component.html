@@ -21,7 +21,7 @@
         </div>
 
         <!-- Available Drinks -->
-        <div *ngFor="let drink of offer.availableDrinks; let i = index">
+        <!-- <div *ngFor="let drink of offer.availableDrinks; let i = index">
         <div *ngFor="let drink of offer.availableDrinks; let i = index">
             <div>
                 <label for="drink-title-en-{{i}}">Drink Title (EN):</label>
@@ -35,7 +35,7 @@
                 <button type="button" (click)="removeDrink(i)">Remove</button>
             </div>
         </div>
-        </div> 
+        </div>  -->
 
         <!-- Available Fries -->
         <!-- <div *ngFor="let fry of offer.availableFries; let i = index">
@@ -55,9 +55,8 @@
 
 
         <!-- Tabs -->
-<!-- :todo FIX CLICK ADD TAB -->
         <div class="add-tab-container">
-            <button class="buttonTab" (click)="addTab()">Add Choice Tab</button>
+            <!-- <button (click)="addTab()">Add Choice Tab</button> -->
         </div>
 
         <div class="tab-container">
@@ -72,7 +71,7 @@
             <div class="title">FRIES 1</div>
             <div class="options">
                 <label class="option" *ngFor="let fry of offer.availableFries">
-                    <input type="radio" name="fries" [(ngModel)]="selectedFries" [value]="fry.title.en">
+                    <input type="radio" name="fries" [(ngModel)]="selectedFrie" [value]="fry.title.en">
                     {{ fry.title.en }}
                 </label>
             </div>
@@ -94,6 +93,7 @@
             <div class="title">{{ activeTab | titlecase }}</div>
             <p>This is a dynamically added choice tab.</p>
         </div>
+
 
 
         <!-- <div>
