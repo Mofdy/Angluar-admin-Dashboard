@@ -70,7 +70,7 @@ export class AddOfferComponent implements OnInit {
     this.activeTab = tabTitle;
   }
 
-  addTab() {
+  addTab(): void {
 
     const choiceTabs = this.offer.tabs.filter(tab => tab.title.en.startsWith('choice'));
     const newChoiceNumber = choiceTabs.length + 1; // Increment by 1

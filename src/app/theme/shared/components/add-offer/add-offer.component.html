@@ -22,6 +22,7 @@
 
         <!-- Available Drinks -->
         <!-- <div *ngFor="let drink of offer.availableDrinks; let i = index">
+        <!-- <div *ngFor="let drink of offer.availableDrinks; let i = index">
             <div>
                 <label for="drink-title-en-{{i}}">Drink Title (EN):</label>
                 <input id="drink-title-en-{{i}}" [(ngModel)]="drink.title.en" name="drinkTitleEn{{i}}">
@@ -34,8 +35,10 @@
                 <button type="button" (click)="removeDrink(i)">Remove</button>
             </div>
         </div> -->
+        </div> -->
 
         <!-- Available Fries -->
+        <!-- <div *ngFor="let fry of offer.availableFries; let i = index">
         <!-- <div *ngFor="let fry of offer.availableFries; let i = index">
             <div>
                 <label for="fry-title-en-{{i}}">Fries Title (EN):</label>
@@ -119,13 +122,22 @@
                     <button class="remove-button" style="width: fit-content" (click)="removeProduct(product)">×</button>
                 </div>
                    
+                <div style="width: fit-content" *ngFor="let product of selectedProducts" class="selected-product">
+                    {{ product }}
+                    <button class="remove-button" style="width: fit-content" (click)="removeProduct(product)">×</button>
+                </div>
+                   
             </div>
             <h3>Selected products</h3>
             <div class="available-products">
                 <button *ngFor="let product of availableProducts" style="width: fit-content"
                     (click)="addProduct(product)">{{ product }} +</button>
+                <button *ngFor="let product of availableProducts" style="width: fit-content"
+                    (click)="addProduct(product)">{{ product }} +</button>
             </div>
         </div>
+
+
 
 
         <!-- Images -->
