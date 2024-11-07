@@ -1,31 +1,19 @@
 <div class="ms-auto">
   <ul class="list-unstyled">
     <li>
-      <div class="dropdown pc-h-item header-user-profile" ngbDropdown>
-        <a
-          class="pc-head-link head-link-primary dropdown-toggle arrow-none me-0"
-          data-bs-toggle="dropdown"
-          href="javascript:"
-          ngbDropdownToggle
-        >
-          <img src="assets/images/user/profile.png"  alt="user-image" class="user-avtar" />
-          <span>
-            <i class="ti ti-settings"></i>
-          </span>
+      <div class="dropdown pc-h-item header-user-profile" style="width: 5;height: 5;" ngbDropdown>
+        <a class="pc-head-link head-link-primary dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="javascript:" ngbDropdownToggle>
+          <span><i class="ti ti-settings"></i></span>
         </a>
         <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown" ngbDropdownMenu>
           <div class="dropdown-header">
-            <h4>
-              Good Morning
-            </h4>
+            <h4>Good Morning</h4>
             <p class="text-muted">Project Admin</p>
-            <ng-scrollbar style="height: calc(40vh - 280px)" visibility="hover">
             <hr/>
-              <a (click)="logout()" style="cursor: pointer;" class="dropdown-item">
-                <i class="ti ti-logout"></i>
-                <span>Logout</span>
-              </a>
-            </ng-scrollbar>
+            <a (click)="logout()" style="cursor: pointer;" class="dropdown-item">
+              <i class="ti ti-logout"></i>
+              <span>Logout</span>
+            </a>
           </div>
         </div>
       </div>
