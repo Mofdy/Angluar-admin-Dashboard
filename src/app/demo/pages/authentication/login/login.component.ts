@@ -2,6 +2,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AlertService } from 'src/app/services/alert.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -15,7 +16,7 @@ export default class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService ,private alertService: AlertService) { }
 
   ngOnInit(): void {
   }
@@ -23,12 +24,12 @@ export default class LoginComponent implements OnInit {
   login() {
 
     if (this.email == '') {
-      alert('Please enter email');
+      this.alertService.showInfo('Please enter email');
       return;
     }
 
     if (this.password == '') {
-      alert('Please enter password');
+      this.alertService.showInfo('Please enter password');
       return;
     }
 
