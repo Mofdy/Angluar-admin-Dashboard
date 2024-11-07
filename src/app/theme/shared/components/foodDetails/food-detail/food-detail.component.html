@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
    
 <form *ngIf="food" (ngSubmit)="updateFood()">
@@ -47,3 +48,98 @@
 
 
 </form>
+=======
+<form *ngIf="food" (ngSubmit)="updateFood()">
+  <div>
+    <label for="titleEn">Product Title (English)</label>
+    <input [(ngModel)]="food.title.en" id="titleEn" name="titleEn" placeholder="Title (English)" required>
+  </div>
+
+  <div>
+    <label for="titleAr">Product Title (Arabic)</label>
+    <input [(ngModel)]="food.title.ar" id="titleAr" name="titleAr" placeholder="Title (Arabic)" required>
+  </div>
+
+  <div>
+    <label for="category">Product Category</label>
+    <input [(ngModel)]="food.category" id="category" name="category" placeholder="Category" required>
+  </div>
+
+  <!-- Display Description fields only if description exists -->
+  <div *ngIf="food.description">
+    <div>
+      <label for="descriptionEn">Product Description (English)</label>
+      <textarea [(ngModel)]="food.description.en" id="descriptionEn" name="descriptionEn" placeholder="Description (English)" required></textarea>
+    </div>
+    <div>
+      <label for="descriptionAr">Product Description (Arabic)</label>
+      <textarea [(ngModel)]="food.description.ar" id="descriptionAr" name="descriptionAr" placeholder="Description (Arabic)" required></textarea>
+    </div>
+  </div>
+
+  <!-- Display Details fields only if details exist -->
+  <div *ngIf="food.details">
+    <!-- Check for specific fields inside details before displaying -->
+    <div *ngIf="'bread' in food.details">
+      <label for="bread">Bread</label>
+      <input [(ngModel)]="food.details.bread" id="bread" name="bread" type="checkbox">
+    </div>
+    <div *ngIf="'drinks' in food.details">
+      <label for="drinks">Drinks</label>
+      <input [(ngModel)]="food.details.drinks" id="drinks" name="drinks" type="checkbox">
+    </div>
+    <div *ngIf="'extras' in food.details">
+      <label for="extras">Extras</label>
+      <input [(ngModel)]="food.details.extras" id="extras" name="extras" type="checkbox">
+    </div>
+    <div *ngIf="'comboOptions' in food.details">
+      <label for="comboOptions">Combo Options</label>
+      <input [(ngModel)]="food.details.comboOptions" id="comboOptions" name="comboOptions" type="checkbox">
+    </div>
+
+    <!-- Handle sizes if they exist -->
+    <div *ngIf="'size' in food.details">
+      <label>Sizes</label>
+      <div *ngFor="let size of food.details.size; let i = index">
+        <div>
+          <label for="sizeTitleEn-{{ i }}">Size Title (English)</label>
+          <input [(ngModel)]="size.title.en" id="sizeTitleEn-{{ i }}" name="sizeTitleEn-{{ i }}" placeholder="Size Title (English)" required>
+        </div>
+        <div>
+          <label for="sizeTitleAr-{{ i }}">Size Title (Arabic)</label>
+          <input [(ngModel)]="size.title.ar" id="sizeTitleAr-{{ i }}" name="sizeTitleAr-{{ i }}" placeholder="Size Title (Arabic)" required>
+        </div>
+        <div>
+          <label for="sizePrice-{{ i }}">Size Price {{size.title.en}}</label>
+          <input [(ngModel)]="size.price" id="sizePrice-{{ i }}" name="sizePrice-{{ i }}" type="number" placeholder="Size Price" required>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label for="price">Price</label>
+    <input [(ngModel)]="food.price" id="price" name="price" placeholder="Price" required type="number">
+  </div>
+
+  <div>
+    <label for="image">Image URL</label>
+    <input [(ngModel)]="food.image" id="image" name="image" placeholder="Image URL" required>
+  </div>
+
+  <div>
+    <img [src]="food.image" width="300" height="300" *ngIf="food.image">
+  </div>
+
+  <div>
+    <label for="imageWithCombo">Image with Combo</label>
+    <input [(ngModel)]="food.imageWithCombo" id="imageWithCombo" name="imageWithCombo" placeholder="Image with Combo URL" required>
+  </div>
+  <div>
+    <img [src]="food.imageWithCombo" *ngIf="food.imageWithCombo">
+  </div>
+
+  <button type="submit">Update</button>
+</form>
+
+>>>>>>> e97af9489d50b1afe95651e5f82a9c93094e0024

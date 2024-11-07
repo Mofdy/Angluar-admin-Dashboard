@@ -9,17 +9,18 @@ export interface ifood {
       comboOptions: boolean;
       drinks: boolean;
       extras: boolean;
+      bread: boolean;
+      size?: Array<{
+        price: number;
+        title?: {
+          ar: string;
+          en: string;
+        };
+      }>;
     };
-    size?: Array<{
-      price: number;
-      title?: {
-        ar: string;
-        en: string;
-      };
-    }>;
     image: string;
     imageWithCombo?: string;
-    price: string;
+    price: number;
     title: {
       ar: string;
       en: string;

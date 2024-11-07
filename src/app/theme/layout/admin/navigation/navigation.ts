@@ -73,51 +73,43 @@ const NavigationItems = [
     icon: 'icon-navigation',
     children: [
       {
-        id: 'typography',
-        title: 'orderlist',
+        id: 'Add Food',
+        title: 'Add Food',
         type: 'item',
         classes: 'nav-item',
-        url: '/typography',
-        icon: 'ti ti-list'
-      },
-      {
-        id: 'color',
-        title: 'Order Detail',
-        type: 'item',
-        classes: 'nav-item',
-        url: '/color',
+        url: '/add-food',
         icon: 'ti ti-paper-bag'
       },
+      {
+        id: 'Add Offer',
+        title: 'Add Offer',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/add-offer',
+        icon: 'ti ti-paper-bag'
+      },
+
+      // Analytics
       // {
-      //   id: 'typography',
-      //   title: 'orderlist',
+      //   id: 'color',
+      //   title: 'Analytics',
       //   type: 'item',
       //   classes: 'nav-item',
       //   url: '#',
-      //   icon: 'ti ti-list',
-      //   breadcrumbs: false,
-
+      //   icon: 'ti ti-graph',
+      //   breadcrumbs: false
+      // }, 
+      // {
+      //   id: 'color',
+      //   title: 'Reviews',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '#',
+      //   icon: 'ti ti-stars',
+      //   target: true,
+      //   external: true
       // },
-      {
-        id: 'color',
-        title: 'Analytics',
-        type: 'item',
-        classes: 'nav-item',
-        url: '#',
-        icon: 'ti ti-graph',
-        breadcrumbs: false
-
-      }, 
-      {
-        id: 'color',
-        title: 'Reviews',
-        type: 'item',
-        classes: 'nav-item',
-        url: '#',
-        icon: 'ti ti-stars',
-        target: true,
-        external: true
-      }, {
+       {
         id: 'food',
         title: 'Foods',
         type: 'item',
@@ -132,67 +124,18 @@ const NavigationItems = [
         classes: 'nav-item',
         url: '/food-Detail',
         icon: 'ti ti-graph',
-      }, {
-        id: 'tabler',
-        title: 'Customer Detail',
+      }, 
+      {
+        id: 'offer-Details',
+        title: 'Offer Details',
         type: 'item',
         classes: 'nav-item',
-        url: '#',
+        url: '/offer-Details',
         icon: 'ti ti-graph',
-      }, {
-        id: 'tabler',
-        title: 'Calendar',
-        type: 'item',
-        classes: 'nav-item',
-        url: '#',
-        icon: 'ti ti-calendar-month',
-        
-      },
-      {
-        id: 'tabler',
-        title: 'Chat',
-        type: 'item',
-        classes: 'nav-item',
-        url: '#',
-        icon: 'ti ti-message-dots',
-
-      },
-      {
-        id: 'tabler',
-        title: 'Wallet',
-        type: 'item',
-        classes: 'nav-item',
-        url: '#',
-        icon: 'ti ti-wallet',
-      }
+      }, 
+      
     ]
   },
-  // {
-  //   id: 'other',
-  //   title: 'Other',
-  //   type: 'group',
-  //   icon: 'icon-navigation',
-  //   children: [
-  //     {
-  //       id: 'sample-page',
-  //       title: 'Sample Page',
-  //       type: 'item',
-  //       url: '/sample-page',
-  //       classes: 'nav-item',
-  //       icon: 'ti ti-brand-chrome'
-  //     },
-  //     {
-  //       id: 'document',
-  //       title: 'Document',
-  //       type: 'item',
-  //       classes: 'nav-item',
-  //       url: 'https://codedthemes.gitbook.io/berry-angular/',
-  //       icon: 'ti ti-vocabulary',
-  //       target: true,
-  //       external: true
-  //     }
-  //   ]
-  // }
 ];
 
 @Injectable()
