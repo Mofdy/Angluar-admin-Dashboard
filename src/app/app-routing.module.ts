@@ -11,7 +11,10 @@ import { FoodDetailComponent } from './theme/shared/components/foodDetails/food-
 import { AddFoodComponent } from './theme/shared/components/add-food/add-food.component';
 import { OfferDetailsComponent } from './theme/shared/components/offer-details/offer-details.component';
 import { AddOfferComponent } from './theme/shared/components/add-offer/add-offer.component';
+<<<<<<< HEAD
 >>>>>>> e97af9489d50b1afe95651e5f82a9c93094e0024
+=======
+>>>>>>> a106999f35b3e896432dc6b289671898d769c2a9
 
 const routes: Routes = [
   {
