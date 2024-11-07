@@ -34,41 +34,41 @@ const NavigationItems = [
       }
     ]
   },
+  // {
+  //   id: 'page',
+  //   title: 'Pages',
+  //   type: 'group',
+  //   icon: 'icon-navigation',
+  //   children: [
+  //     {
+  //       id: 'Authentication',
+  //       title: 'Authentication',
+  //       type: 'collapse',
+  //       icon: 'ti ti-key',
+  //       children: [
+  //         {
+  //           id: 'login',
+  //           title: 'Login',
+  //           type: 'item',
+  //           url: '/guest/login',
+  //           target: true,
+  //           breadcrumbs: false
+  //         },
+  //         {
+  //           id: 'register',
+  //           title: 'Register',
+  //           type: 'item',
+  //           url: '/guest/register',
+  //           target: true,
+  //           breadcrumbs: false
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
   {
-    id: 'page',
-    title: 'Pages',
-    type: 'group',
-    icon: 'icon-navigation',
-    children: [
-      {
-        id: 'Authentication',
-        title: 'Authentication',
-        type: 'collapse',
-        icon: 'ti ti-key',
-        children: [
-          {
-            id: 'login',
-            title: 'Login',
-            type: 'item',
-            url: '/guest/login',
-            target: true,
-            breadcrumbs: false
-          },
-          {
-            id: 'register',
-            title: 'Register',
-            type: 'item',
-            url: '/guest/register',
-            target: true,
-            breadcrumbs: false
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 'elements',
-    title: 'Elements',
+    id: 'Products',
+    title: 'Products',
     type: 'group',
     icon: 'icon-navigation',
     children: [

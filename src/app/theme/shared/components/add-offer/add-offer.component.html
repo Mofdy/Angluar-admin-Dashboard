@@ -1,5 +1,6 @@
 <div>
-    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <!-- ngSubmit)="onSubmit()" -->
+    <form  #myForm="ngForm">
         <!-- Title -->
         <div>
             <label for="title-en">Title (EN):</label>
@@ -56,7 +57,7 @@
 
         <!-- Tabs -->
         <div class="add-tab-container">
-            <!-- <button (click)="addTab()">Add Choice Tab</button> -->
+            <button (click)="addTab()">Add Choice Tab</button>
         </div>
 
         <div class="tab-container">
@@ -164,6 +165,6 @@
             <input id="price" [(ngModel)]="offer.price" name="price" type="number">
         </div>
 
-        <button type="submit">Add Offer</button>
+        <button  (click)="onSubmit()">Add Offer</button>
     </form>
 </div>
