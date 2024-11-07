@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AlertService } from 'src/app/services/alert.service';
+// import { AlertService } from 'src/app/services/alert.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -40,7 +41,7 @@ export default class LoginComponent implements OnInit {
 
   }
 
-  signInWithGoogle() {
-    this.auth.googleSignIn();
-  }
+  // signInWithGoogle() {
+  //   this.auth.googleSignIn();
+  // }
 }
