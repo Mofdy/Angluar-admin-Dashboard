@@ -66,8 +66,40 @@ const NavigationItems = [
   //     }
   //   ]
   // },
+  // {
+  //   id: 'page',
+  //   title: 'Pages',
+  //   type: 'group',
+  //   icon: 'icon-navigation',
+  //   children: [
+  //     {
+  //       id: 'Authentication',
+  //       title: 'Authentication',
+  //       type: 'collapse',
+  //       icon: 'ti ti-key',
+  //       children: [
+  //         {
+  //           id: 'login',
+  //           title: 'Login',
+  //           type: 'item',
+  //           url: '/guest/login',
+  //           target: true,
+  //           breadcrumbs: false
+  //         },
+  //         {
+  //           id: 'register',
+  //           title: 'Register',
+  //           type: 'item',
+  //           url: '/guest/register',
+  //           target: true,
+  //           breadcrumbs: false
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
   {
-    id: 'Products',
+    id: 'products',
     title: 'Products',
     type: 'group',
     icon: 'icon-navigation',
@@ -88,27 +120,6 @@ const NavigationItems = [
         url: '/add-offer',
         icon: 'ti ti-paper-bag'
       },
-
-      // Analytics
-      // {
-      //   id: 'color',
-      //   title: 'Analytics',
-      //   type: 'item',
-      //   classes: 'nav-item',
-      //   url: '#',
-      //   icon: 'ti ti-graph',
-      //   breadcrumbs: false
-      // }, 
-      // {
-      //   id: 'color',
-      //   title: 'Reviews',
-      //   type: 'item',
-      //   classes: 'nav-item',
-      //   url: '#',
-      //   icon: 'ti ti-stars',
-      //   target: true,
-      //   external: true
-      // },
        {
         id: 'food',
         title: 'Foods',

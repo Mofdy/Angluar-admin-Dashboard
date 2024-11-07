@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-<div class="product-grid">
-    <div *ngFor="let food of foods" class="product-item">
-      <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
-      <p>{{ food.category }}</p>
-      <img [src]="food.image" alt="{{ food.title.en }}" class="img-container">
-      <div *ngFor="let size of food.size">
-        <p>{{ size.title.en }} / {{ size.title.ar }} - {{ size.price | currency }}</p>
-      </div>
-      <button (click)="editFood(food)">Edit</button>
-      <button (click)="deleteFood(food.title.en)">Delete</button>
-    </div>
-  </div>
-  
-  
-  
-=======
-<!-- <h2 style="text-align: center">Burgers</h2>
-<div class="product-grid">
-  <ng-container *ngFor="let food of foods">
-    <div class="product-item" *ngIf="food.category === 'burger sandwiches'">
-      <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
-      <img [src]="food.image" alt="{{ food.title.en }}" class="img-container" />
-
-      <div *ngIf="food.details?.size">
-        <div *ngFor="let size of food.details.size">
-          <p>{{ size.title?.en }} / {{ size.title?.ar }} - {{ size.price | currency }}</p>
-        </div>
-      </div>
-
-      <button (click)="editFood(food)">Edit</button>
-      <button (click)="deleteFood(food.title.en)">Delete</button>
-    </div>
-  </ng-container>
-</div>  -->
-
 <h2 style="text-align: center">Offers</h2>
 <div class="product-grid">
   <div *ngFor="let offer of offers ; let i = index">
@@ -55,7 +19,6 @@
   <div class="product-item">
     <h3>{{ food.title.en }} / {{ food.title.ar }}</h3>
     <img [src]="food.image" alt="{{ food.title.en }}" class="img-container" />
-
     <div *ngIf="food.details?.size">
       <div *ngFor="let size of food.details.size">
         <p>{{ size.title?.en }} / {{ size.title?.ar }} - {{ size.price | currency }}</p>

@@ -13,45 +13,21 @@ import { Router } from '@angular/router';
   styleUrl: './add-offer.component.scss'
 })
 export class AddOfferComponent implements OnInit {
-
   offer: IOffer = {
-    availableFries: [
-      { price: 0, title: { ar: 'بطاطس صغيرة', en: 'Small French Fries' } },
-      { price: 10, title: { ar: 'بطاطس كبيرة', en: 'Large French Fries' } }
-    ],
-    availableDrinks: [
-      { price: 0, title: { ar: 'كولا كبيرة', en: 'Big Cola' } },
-      { price: 10, title: { ar: 'عصير تفاح نقي', en: 'Pure Apple Juice' } }
-    ],
-    availableProducts: [''],
+    availableDrinks: [{ price: 0, title: { ar: '', en: '' } }],
+    availableFries: [{ price: 0, title: { ar: '', en: '' } }],
+    availableProducts: [''], 
     description: { ar: '', en: '' },
     image: '',
     keenImage: '',
     price: 0,
     swiperMobileImage: '',
     swiperWebImage: '',
-    tabs: [
-      { title: { ar: 'الاختيار', en: 'choice' } },
-      { title: { ar: 'المشروبات', en: 'drinks' } },
-      { title: { ar: 'البطاطس', en: 'fries' } },
-    ],
+    tabs: [{ title: { ar: '', en: '' } }], 
     title: { ar: '', en: '' }
   }
 
-  selectedFries = {
-    small: false,
-    large: false
-  };
-  selectedDrinks = {
-    bigCola: false,
-    appleJuice: false,
-    noDrink: false
-  };
-  activeTab: string = 'fries'; // Default tab
-  selectedFrie: string = this.offer.availableFries[0].title.en; // Default fries selection
-  selectedDrink: string = this.offer.availableDrinks[0].title.en; // Default drink selection
-
-  selectedProducts: string[] = [];
+  selectedProducts:string []  = [];
   availableProducts: string[] = [];
 
   constructor(
@@ -69,63 +45,11 @@ export class AddOfferComponent implements OnInit {
   }
   onSubmit(): void {
     if (this.offer) {
-      const selectedFriesList = [];
-      if (this.selectedFries.small) {
-        selectedFriesList.push({ price: 0, title: { ar: 'بطاطس صغيرة', en: 'Small French Fries' } });
-      }
-      if (this.selectedFries.large) {
-        selectedFriesList.push({ price: 0, title: { ar: 'بطاطس كبيرة', en: 'Large French Fries' } });
-      }
-
-      // تحديث availableFries بناءً على الاختيارات
-      if (selectedFriesList.length > 0) {
-        this.offer.availableFries = selectedFriesList;
-      } else {
-        // إذا لم يتم اختيار أي نوع من البطاطس، احذف availableFries
-        this.offer.availableFries = [];
-      }
-
-      // منطق المشروبات: إذا اختار المستخدم "بدون مشروب"، احذف كافة المشروبات
-      if (this.selectedDrinks.noDrink) {
-        this.offer.availableDrinks = [];
-      } else {
-        const selectedDrinksList = [];
-        if (this.selectedDrinks.bigCola) {
-          selectedDrinksList.push({ price: 0, title: { ar: 'كولا كبيرة', en: 'Big Cola' } });
-        }
-        if (this.selectedDrinks.appleJuice) {
-          selectedDrinksList.push({ price: 0, title: { ar: 'عصير تفاح نقي', en: 'Pure Apple Juice' } });
-        }
-        this.offer.availableDrinks = selectedDrinksList;
-      }
-      this.selectedFries = { small: false, large: false }; // delete fries
-      this.selectedDrinks = { bigCola: false, appleJuice: false, noDrink: false }; // delete drinks
-
       this.offerService.addOffer(this.offer).then(() => {
-        this.router.navigate(['/food']);
-        console.log(this.offer);
-      });
+         this.router.navigate(['/food']); 
+         console.log(this.offer);
+        });
     }
-  }
-
-  selectTab(tabTitle: string): void {
-    this.activeTab = tabTitle;
-  }
-
-  addTab(): void {
-
-    const choiceTabs = this.offer.tabs.filter(tab => tab.title.en.startsWith('choice'));
-    const newChoiceNumber = choiceTabs.length + 1; // Increment by 1
-
-    // Add a new tab with the incremented choice number
-    this.offer.tabs.push({
-      title: {
-        ar: `الاختيار ${newChoiceNumber}`,
-        en: `Choice ${newChoiceNumber}`
-      }
-    });
-    // Automatically select the new tab
-    this.activeTab = `choice ${newChoiceNumber}`.toLowerCase();
   }
   addDrink() {
     this.offer.availableDrinks.push({ price: 0, title: { ar: '', en: '' } });
@@ -135,9 +59,9 @@ export class AddOfferComponent implements OnInit {
     this.offer.availableFries.push({ price: 0, title: { ar: '', en: '' } });
   }
 
-  // addTab() {
-  //   this.offer.tabs.push({ title: { ar: '', en: '' } });
-  // }
+  addTab() {
+    this.offer.tabs.push({ title: { ar: '', en: '' } });
+  }
 
   removeDrink(index: number) {
     this.offer.availableDrinks.splice(index, 1);
@@ -147,11 +71,9 @@ export class AddOfferComponent implements OnInit {
     this.offer.availableFries.splice(index, 1);
   }
 
-  // removeTab(index: number) {
-  //   if (index < 3 ) {
-  //     this.offer.tabs.splice(index, 1);
-  //   }
-  // }
+  removeTab(index: number) {
+    this.offer.tabs.splice(index, 1);
+  }
   addProduct(product: string) {
     this.selectedProducts.push(product);
     this.availableProducts = this.availableProducts.filter((prd) => prd != product);
