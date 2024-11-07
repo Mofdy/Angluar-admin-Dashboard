@@ -93,17 +93,30 @@
             <input id="image" [(ngModel)]="offer.image" name="image">
         </div>
         <div>
+            <img [src]="offer.image" width="300" height="300" *ngIf="offer.image">
+        </div>
+        <div>
             <label for="keenImage">Keen Image:</label>
             <input id="keenImage" [(ngModel)]="offer.keenImage" name="keenImage">
+        </div>
+        <div>
+            <img [src]="offer.keenImage" width="300" height="300" *ngIf="offer.keenImage">
+        </div>
+        <div>
+            <label for="swiperWebImage">Swiper Web Image:</label>
+            <input id="swiperWebImage" [(ngModel)]="offer.swiperWebImage" name="swiperWebImage">
+        </div>
+        <div>
+            <img [src]="offer.swiperWebImage" width="450" height="250" style="object-fit: contain;" *ngIf="offer.swiperWebImage">
         </div>
         <div>
             <label for="swiperMobileImage">Swiper Mobile Image:</label>
             <input id="swiperMobileImage" [(ngModel)]="offer.swiperMobileImage" name="swiperMobileImage">
         </div>
         <div>
-            <label for="swiperWebImage">Swiper Web Image:</label>
-            <input id="swiperWebImage" [(ngModel)]="offer.swiperWebImage" name="swiperWebImage">
+            <img [src]="offer.swiperMobileImage" width="250" height="500" *ngIf="offer.swiperMobileImage">
         </div>
+        
 
         <!-- Price -->
         <div>
