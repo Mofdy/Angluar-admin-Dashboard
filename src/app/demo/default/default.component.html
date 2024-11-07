@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-xl-4 col-md-6">
     <div class="card earning-card bg-secondary-dark text-white overflow-hidden">
       <span class="round secondary-round small"></span>
@@ -94,26 +94,7 @@
           </div>
           <app-bajaj-chart />
         </div>
-        <!-- <ul class="list-group list-group-flush">
-          @for (list of ListGroup; track list) {
-            <li class="list-group-item px-0 {{ list.space }}">
-              <div class="row align-items-start">
-                <div class="col">
-                  <h5 class="mb-0">{{ list.name }}</h5>
-                  <small class="{{ list.color }}">{{ list.profit }}</small>
-                </div>
-                <div class="col-auto">
-                  <h4 class="mb-0">
-                    {{ list.invest }}
-                    <span class="ms-2 align-top avatar avatar-xxs {{ list.bgColor }}">
-                      <i class="{{ list.icon }} {{ list.color }}"></i>
-                    </span>
-                  </h4>
-                </div>
-              </div>
-            </li>
-          }
-        </ul> -->
+   
         <div class="text-center">
           <a href="javascript:" class="b-b-primary text-primary f-w-500">
             View all
@@ -121,6 +102,45 @@
           </a>
         </div>
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="dashboard-container">
+  <!-- Header -->
+  <div class="header">
+    <h1>Admin Dashboard</h1>
+  </div>
+
+  <!-- Orders Stats Section -->
+  <div class="orders-stats">
+    <div class="stat-card">
+      <h3>Today's Sales</h3>
+      <p class="stat-number">{{ordersToday}}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Weekly Sales</h3>
+      <p class="stat-number">{{ordersThisWeek}}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Monthly Sales</h3>
+      <p class="stat-number">{{ordersThisMonth}}</p>
+    </div>
+  </div>
+
+  <!-- Revenue Stats Section -->
+  <div class="revenue-stats">
+    <div class="stat-card">
+      <h3>Today's Revenue</h3>
+      <p class="stat-number">{{totalForToday|currency:'EGP':'symbol':'1.0-0'}}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Weekly Revenue</h3>
+      <p class="stat-number">{{totalForCurrentWeek|currency:'EGP':'symbol':'1.0-0'}}</p>
+    </div>
+    <div class="stat-card">
+      <h3>Monthly Revenue</h3>
+      <p class="stat-number">{{total|currency:'EGP':'symbol':'1.0-0'}}</p>
     </div>
   </div>
 </div>
