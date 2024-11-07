@@ -14,20 +14,34 @@ import { Router } from '@angular/router';
 })
 export class AddOfferComponent implements OnInit {
   offer: IOffer = {
-    availableDrinks: [{ price: 0, title: { ar: '', en: '' } }],
-    availableFries: [{ price: 0, title: { ar: '', en: '' } }],
-    availableProducts: [''], 
+    availableFries: [
+      { price: 0, title: { ar: 'بطاطس صغيرة', en: 'Small French Fries' } },
+      { price: 10, title: { ar: 'بطاطس كبيرة', en: 'Large French Fries' } }
+    ],
+    availableDrinks: [
+      { price: 0, title: { ar: 'كولا كبيرة', en: 'Big Cola' } },
+      { price: 10, title: { ar: 'عصير تفاح نقي', en: 'Pure Apple Juice' } }
+    ],
+    availableProducts: [''],
     description: { ar: '', en: '' },
     image: '',
     keenImage: '',
     price: 0,
     swiperMobileImage: '',
     swiperWebImage: '',
-    tabs: [{ title: { ar: '', en: '' } }], 
+    tabs: [
+      { title: { ar: 'الاختيار', en: 'choice' } },
+      { title: { ar: 'المشروبات', en: 'drinks' } },
+      { title: { ar: 'البطاطس', en: 'fries' } },
+    ],
     title: { ar: '', en: '' }
   }
 
-  selectedProducts:string []  = [];
+  activeTab: string = 'fries'; // Default tab
+  selectedFries: string = this.offer.availableFries[0].title.en; // Default fries selection
+  selectedDrink: string = this.offer.availableDrinks[0].title.en; // Default drink selection
+
+  selectedProducts: string[] = [];
   availableProducts: string[] = [];
 
   constructor(
@@ -46,10 +60,30 @@ export class AddOfferComponent implements OnInit {
   onSubmit(): void {
     if (this.offer) {
       this.offerService.addOffer(this.offer).then(() => {
-         this.router.navigate(['/food']); 
-         console.log(this.offer);
-        });
+        // this.router.navigate(['/food']);
+        console.log(this.offer);
+      });
     }
+  }
+
+  selectTab(tabTitle: string): void {
+    this.activeTab = tabTitle;
+  }
+
+  addTab(): void {
+
+    const choiceTabs = this.offer.tabs.filter(tab => tab.title.en.startsWith('choice'));
+    const newChoiceNumber = choiceTabs.length + 1; // Increment by 1
+
+    // Add a new tab with the incremented choice number
+    this.offer.tabs.push({
+      title: {
+        ar: `الاختيار ${newChoiceNumber}`,
+        en: `Choice ${newChoiceNumber}`
+      }
+    });
+    // Automatically select the new tab
+    this.activeTab = `choice ${newChoiceNumber}`.toLowerCase();
   }
   addDrink() {
     this.offer.availableDrinks.push({ price: 0, title: { ar: '', en: '' } });
@@ -59,9 +93,9 @@ export class AddOfferComponent implements OnInit {
     this.offer.availableFries.push({ price: 0, title: { ar: '', en: '' } });
   }
 
-  addTab() {
-    this.offer.tabs.push({ title: { ar: '', en: '' } });
-  }
+  // addTab() {
+  //   this.offer.tabs.push({ title: { ar: '', en: '' } });
+  // }
 
   removeDrink(index: number) {
     this.offer.availableDrinks.splice(index, 1);
@@ -72,7 +106,9 @@ export class AddOfferComponent implements OnInit {
   }
 
   removeTab(index: number) {
-    this.offer.tabs.splice(index, 1);
+    if (index > 3 ) {
+      this.offer.tabs.splice(index, 1);
+    }
   }
   addProduct(product: string) {
     this.selectedProducts.push(product);

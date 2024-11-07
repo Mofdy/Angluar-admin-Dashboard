@@ -20,15 +20,15 @@
             <input id="description-ar" [(ngModel)]="offer.description.ar" name="descriptionAr">
         </div>
 
-        
-        <div style= 'display: flex; justify-content: center; gap: 5px;'>
+
+        <!-- <div style='display: flex; justify-content: center; gap: 5px;'>
             <button type="button" (click)="addDrink()">Add Drink</button>
             <button type="button" (click)="addFry()">Add Fry</button>
 
-        </div>
+        </div> -->
 
         <!-- Available Drinks -->
-        <div *ngFor="let drink of offer.availableDrinks; let i = index">
+        <!-- <div *ngFor="let drink of offer.availableDrinks; let i = index">
             <div>
                 <label for="drink-title-en-{{i}}">Drink Title (EN):</label>
                 <input id="drink-title-en-{{i}}" [(ngModel)]="drink.title.en" name="drinkTitleEn{{i}}">
@@ -40,10 +40,10 @@
                 <input id="drink-price-{{i}}" [(ngModel)]="drink.price" name="drinkPrice{{i}}" type="number">
                 <button type="button" (click)="removeDrink(i)">Remove</button>
             </div>
-        </div>
+        </div> -->
 
         <!-- Available Fries -->
-        <div *ngFor="let fry of offer.availableFries; let i = index">
+        <!-- <div *ngFor="let fry of offer.availableFries; let i = index">
             <div>
                 <label for="fry-title-en-{{i}}">Fries Title (EN):</label>
                 <input id="fry-title-en-{{i}}" [(ngModel)]="fry.title.en" name="fryTitleEn{{i}}">
@@ -55,38 +55,99 @@
                 <input id="fry-price-{{i}}" [(ngModel)]="fry.price" name="fryPrice{{i}}" type="number">
                 <button type="button" (click)="removeFry(i)">Remove</button>
             </div>
-        </div>
+        </div> -->
+        <!-- Tabs -->
 
+        <div class="add-tab-container">
+            <button class="buttonTab" (click)="addTab()">Add Choice Tab</button>
+          </div>
+          
+          <div class="tab-container">
+            <div 
+              *ngFor="let tab of offer.tabs" 
+              class="tab" 
+              [class.active]="activeTab === tab.title.en.toLowerCase()" 
+              (click)="selectTab(tab.title.en.toLowerCase())">
+              {{ tab.title.en | titlecase }}
+            </div>
+          </div>
+          
+          <!-- Fries Content -->
+          <div class="content" *ngIf="activeTab === 'fries'">
+            <div class="title">FRIES 1</div>
+            <div class="options">
+              <label 
+                class="option" 
+                *ngFor="let fry of offer.availableFries">
+                <input 
+                  type="radio" 
+                  name="fries" 
+                  [(ngModel)]="selectedFries" 
+                  [value]="fry.title.en">
+                {{ fry.title.en }}
+              </label>
+            </div>
+          </div>
+          
+          <!-- Drinks Content -->
+          <div class="content" *ngIf="activeTab === 'drinks'">
+            <div class="title">DRINKS 1</div>
+            <div class="options">
+              <label 
+                class="option" 
+                *ngFor="let drink of offer.availableDrinks">
+                <input 
+                  type="radio" 
+                  name="drinks" 
+                  [(ngModel)]="selectedDrink" 
+                  [value]="drink.title.en">
+                {{ drink.title.en }}
+              </label>
+            </div>
+          </div>
+          
+          <!-- Dynamic Choice Content -->
+          <div class="content" *ngIf="activeTab.startsWith('choice')">
+            <div class="title">{{ activeTab | titlecase }}</div>
+            <p>This is a dynamically added choice tab.</p>
+          </div>
+          
+
+        <!-- <div>
+            <h2>Tabs</h2>
+            <button type="button" (click)="addTab()">Add Tab</button>
+            <div *ngFor="let tab of offer.tabs; let i = index">
+                <div>
+                    <label for="tab-title-en-{{i}}">Tab Title (EN):</label>
+                    <input id="tab-title-en-{{i}}" [(ngModel)]="tab.title.en" name="tabTitleEn{{i}}" required>
+
+                    <label for="tab-title-ar-{{i}}">Tab Title (AR):</label>
+                    <input id="tab-title-ar-{{i}}" [(ngModel)]="tab.title.ar" name="tabTitleAr{{i}}" required>
+                    <hr />
+                    <button type="button" (click)="removeTab(i)">Remove</button>
+                </div>
+            </div>
+        </div> -->
         <!-- Available Products -->
 
         <div class="product-selection">
             <!-- <input type="text" [value]="selectedProducts.join(', ')" readonly /> -->
             <h3>available products</h3>
             <div class="selected-products" style="background-color: white">
-              <div style="width: fit-content" *ngFor="let product of selectedProducts" class="selected-product">
-                {{ product }}
-                <button class="remove-button" style="width: fit-content" (click)="removeProduct(product)">×</button>
-              </div>
-                 
+                <div style="width: fit-content" *ngFor="let product of selectedProducts" class="selected-product">
+                    {{ product }}
+                    <button class="remove-button" style="width: fit-content" (click)="removeProduct(product)">×</button>
+                </div>
+                   
             </div>
             <h3>Selected products</h3>
             <div class="available-products">
-              <button *ngFor="let product of availableProducts" style="width: fit-content" (click)="addProduct(product)">{{ product }} +</button>
-            </div>
-          </div>
-          <!-- Tabs -->
-        <div *ngFor="let tab of offer.tabs; let i = index">
-            <div>
-                <label for="tab-title-en-{{i}}">Tab Title (EN):</label>
-                <input id="tab-title-en-{{i}}" [(ngModel)]="tab.title.en" name="tabTitleEn{{i}}">
-
-                <label for="tab-title-ar-{{i}}">Tab Title (AR):</label>
-                <input id="tab-title-ar-{{i}}" [(ngModel)]="tab.title.ar" name="tabTitleAr{{i}}">
-                <button type="button" (click)="removeTab(i)">Remove</button>
+                <button *ngFor="let product of availableProducts" style="width: fit-content"
+                    (click)="addProduct(product)">{{ product }} +</button>
             </div>
         </div>
-        
-        <button type="button" (click)="addTab()">Add Tab</button>
+
+
         <!-- Images -->
         <div>
             <label for="image">Image:</label>
