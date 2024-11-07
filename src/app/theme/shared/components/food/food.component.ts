@@ -6,12 +6,9 @@ import { SharedModule } from '../../shared.module';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-<<<<<<< HEAD
-=======
 import { Icategories } from 'src/app/models/icategories';
 import { IOffer } from 'src/app/models/ioffer';
 import { OfferService } from 'src/app/services/offer.service';
->>>>>>> e97af9489d50b1afe95651e5f82a9c93094e0024
 
 @Component({
   selector: 'app-food',
@@ -25,14 +22,6 @@ export class FoodComponent implements OnInit {
   menuCategory: Icategories[] = [];
   offers: IOffer[] = [];
 
-<<<<<<< HEAD
-  constructor(public foodService: FoodService,private router:Router) {}
-
-  ngOnInit() {
-    this.foodService.getFoods().subscribe((foods) => {
-      this.foods = foods;
-      // console.log(foods);
-=======
   // selectedFood: ifood | null = null;
 
   constructor(
@@ -53,18 +42,12 @@ export class FoodComponent implements OnInit {
     this.foodService.getCategories().subscribe((data) => {
       this.menuCategory = data;
       console.log(this.menuCategory);
->>>>>>> e97af9489d50b1afe95651e5f82a9c93094e0024
     });
   }
 
   editFood(food: ifood) {
-<<<<<<< HEAD
-    this.router.navigate(['/food-Detail', food.title.en.split(' ').join('-')])
-    }
-=======
     this.router.navigate(['/food-Detail', food.title.en.split(' ').join('-')]);
   }
->>>>>>> e97af9489d50b1afe95651e5f82a9c93094e0024
 
   deleteFood(id: string) {
     if (confirm('Are you sure you want to delete')) {
