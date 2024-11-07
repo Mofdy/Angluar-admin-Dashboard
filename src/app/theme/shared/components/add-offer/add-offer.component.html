@@ -58,11 +58,35 @@
         </div>
 
         <!-- Available Products -->
-        <div>
-            <label for="available-products">Available Products:</label>
-            <input id="available-products" [(ngModel)]="offer.availableProducts" name="availableProducts">
-        </div>
 
+        <div class="product-selection">
+            <!-- <input type="text" [value]="selectedProducts.join(', ')" readonly /> -->
+            <h3>available products</h3>
+            <div class="selected-products" style="background-color: white">
+              <div style="width: fit-content" *ngFor="let product of selectedProducts" class="selected-product">
+                {{ product }}
+                <button class="remove-button" style="width: fit-content" (click)="removeProduct(product)">×</button>
+              </div>
+                 
+            </div>
+            <h3>Selected products</h3>
+            <div class="available-products">
+              <button *ngFor="let product of availableProducts" style="width: fit-content" (click)="addProduct(product)">{{ product }} +</button>
+            </div>
+          </div>
+          <!-- Tabs -->
+        <div *ngFor="let tab of offer.tabs; let i = index">
+            <div>
+                <label for="tab-title-en-{{i}}">Tab Title (EN):</label>
+                <input id="tab-title-en-{{i}}" [(ngModel)]="tab.title.en" name="tabTitleEn{{i}}">
+
+                <label for="tab-title-ar-{{i}}">Tab Title (AR):</label>
+                <input id="tab-title-ar-{{i}}" [(ngModel)]="tab.title.ar" name="tabTitleAr{{i}}">
+                <button type="button" (click)="removeTab(i)">Remove</button>
+            </div>
+        </div>
+        
+        <button type="button" (click)="addTab()">Add Tab</button>
         <!-- Images -->
         <div>
             <label for="image">Image:</label>
@@ -86,19 +110,6 @@
             <label for="price">Price:</label>
             <input id="price" [(ngModel)]="offer.price" name="price" type="number">
         </div>
-
-        <!-- Tabs -->
-        <div *ngFor="let tab of offer.tabs; let i = index">
-            <div>
-                <label for="tab-title-en-{{i}}">Tab Title (EN):</label>
-                <input id="tab-title-en-{{i}}" [(ngModel)]="tab.title.en" name="tabTitleEn{{i}}">
-
-                <label for="tab-title-ar-{{i}}">Tab Title (AR):</label>
-                <input id="tab-title-ar-{{i}}" [(ngModel)]="tab.title.ar" name="tabTitleAr{{i}}">
-                <button type="button" (click)="removeTab(i)">Remove</button>
-            </div>
-        </div>
-        <button type="button" (click)="addTab()">Add Tab</button>
 
         <button type="submit">Add Offer</button>
     </form>

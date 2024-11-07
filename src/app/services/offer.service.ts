@@ -17,9 +17,8 @@ export class OfferService {
   }
 
   // Add a new offer
-  addOffer(offer: IOffer): Promise<void> {
-    const titleEn = this.firestore.createId();
-    return this.firestore.collection(this.collectionName).doc(titleEn).set({ titleEn, ...offer });
+  async addOffer(offer: IOffer): Promise<void> {
+    await this.firestore.collection(this.collectionName).add(offer);
   }
 
   // Update an existing offer
