@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { Icategories } from 'src/app/models/icategories';
 import { IOffer } from 'src/app/models/ioffer';
 import { OfferService } from 'src/app/services/offer.service';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-food',
@@ -21,14 +22,12 @@ export class FoodComponent implements OnInit {
   foods: ifood[] = [];
   menuCategory: Icategories[] = [];
   offers: IOffer[] = [];
-
-  // selectedFood: ifood | null = null;
-
   constructor(
     public foodService: FoodService,
     public offerService: OfferService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private alertService: AlertService,
+  ) { }
 
   ngOnInit() {
     this.foodService.getFoods().subscribe((data) => {
@@ -53,7 +52,7 @@ export class FoodComponent implements OnInit {
     if (confirm('Are you sure you want to delete')) {
       this.foodService.deleteFood(id).then(() => {
         {
-          console.log('food deleted');
+          this.alertService.showInfo("Product delete successfully")
         }
       });
     }

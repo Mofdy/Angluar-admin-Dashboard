@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider} from '@angular/fire/auth'
 import { Router } from '@angular/router';
+import { AlertService } from './alert.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private fireauth : AngularFireAuth, private router : Router) { }
+  constructor(private fireauth : AngularFireAuth, private router : Router,private alertService: AlertService) { }
   
   // login method
   login(email : string, password : string) {
@@ -17,15 +18,17 @@ export class AuthService {
         
         if(res.user?.emailVerified == true) {
           localStorage.setItem('token','true');
+          this.alertService.showSuccess('Login Sucess')
           console.log(res.user.emailVerified);
           this.router.navigate(['/default']);
         } 
         else {
+          this.alertService.showError('Login Error')
           this.router.navigate(['/guest/login']);
         }
 
     }, err => {
-        alert(err.message);
+      this.alertService.showError(err.message);
         this.router.navigate(['/guest/login']);
     })
   }

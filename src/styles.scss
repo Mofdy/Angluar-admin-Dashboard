@@ -43,3 +43,44 @@ File: style.css
 @import url('scss/fonts/berry/berry-icons.css'); /** custom font icons - berry **/
 @import 'scss/fonts/tabler-icons.min.css';
 @import 'scss/fonts/phosphor/duotone/style.css';
+
+
+//alert
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+.alert-success {
+    background-color: #4caf50; /* Green for success */
+    color: white;
+  }
+  
+  .alert-error {
+    background-color: #f44336; /* Red for errors */
+    color: white;
+  }
+  
+  .alert-info {
+    background-color: #2196f3; /* Blue for information */
+    color: white;
+  }
+  
+  .alert-warning {
+    background-color: #ff9800; /* Orange for warnings */
+    color: white;
+  }
+
+  mat-dialog-content p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  button[color="warn"] {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  

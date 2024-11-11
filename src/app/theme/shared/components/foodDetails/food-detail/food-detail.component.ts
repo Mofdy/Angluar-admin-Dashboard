@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ifood } from 'src/app/models/ifood';
+import { AlertService } from 'src/app/services/alert.service';
 import { FoodService } from 'src/app/services/food.service';
 
 @Component({
@@ -18,7 +19,9 @@ export class FoodDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private foodService: FoodService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService,
+
   ) {}
 
   ngOnInit() {
@@ -37,7 +40,7 @@ export class FoodDetailComponent implements OnInit {
       this.foodService.updateFood(this.food.id, this.food).then(() => {
 
         this.router.navigate(['/food']);
-        console.log(this.food);
+        this.alertService.showSuccess('Updated food Successfully ')
       });
     }
   }

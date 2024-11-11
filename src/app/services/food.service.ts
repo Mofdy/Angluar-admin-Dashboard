@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { ifood } from '../models/ifood';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Title } from '@angular/platform-browser';
 import { Icategories } from '../models/icategories';
 
 @Injectable({
@@ -19,7 +18,7 @@ export class FoodService {
   }
 
   async addFood(food: ifood): Promise<void> {
-    await this.firestore.collection('products').add(food);
+    await this.firestore.collection('products').add(food); 
   }
 
 

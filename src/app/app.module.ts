@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,12 +45,15 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    
     AppRoutingModule,
     CommonModule,
     SharedModule,
     FormsModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [NavigationItem],
   bootstrap: [AppComponent]
